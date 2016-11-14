@@ -1,0 +1,34 @@
+[user]
+    name = chengyi
+    email = chengyi@antiy.cn
+[push]
+    default = matching
+[color]
+    ui = true
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lga = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+    st = status
+    co = checkout
+    ci = commit
+    br = branch 
+    bra = branch -avv
+    unstage = reset HEAD
+    last = log -1 HEAD
+    c = commit -m 
+    cob = checkout -b
+    m = merge
+    a = add
+    brd = branch -d
+    ;获取分支最后修改时间
+    brd = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
+    pg=push origin HEAD:refs/for/master
+[diff]
+    tool = meld
+[merge]
+    tool = kdiff3
+    conflictstyle = diff3
+[core]
+    editor = vim
+[pull]
+	rebase = true

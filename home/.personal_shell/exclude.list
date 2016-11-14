@@ -1,0 +1,14 @@
+media/
+sys/
+proc/
+mnt/
+tmp/
+home/chengyi/backup/
+home/chengyi/code/
+cdrom/
+dev/
+lost+found/
+home/chengyi/.wine/drive_c/users/chengyi/
+boot/
+initrd.img
+vmlinuz

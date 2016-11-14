@@ -1,0 +1,40 @@
+#!/bin/sh
+#=============================================================================
+#     FileName: rebuild
+#         Desc: Used for ctags and cscope
+#       Author: ChengYi
+#        Email: chengyi@antiy.cn
+#     HomePage: http://www.antiy.com/
+#      Created: 2016-04-29 10:46:03
+#      Version: 0.0.1
+#   LastChange: 2016-04-29 10:46:03
+#      History:
+#               0.0.1 | ChengYi | init
+#=============================================================================
+
+################################################## ctags
+#ctags for extern ctags
+ctags-exuberant -R --c++-kinds=+p --fields=+iaSl --language-force=C++ --extra=+fq --sort=foldcase --langmap=C++:+.inc .
+#ctags-exuberant -R  --fields=+l  .
+
+#ctags for emacs ctags
+#ctags -uT --member ./*
+
+################################################## cscope
+find $(pwd) -name "*.h"\
+            -o -name "*.c"\
+            -o -name "*.cpp"\
+            -o -name '*.py'\
+            -o -name '*.java'\
+            -o -name "*.S"\
+            -o -name "*.hpp"\
+            -o -name "*.cc"\
+            -o -name "*.cpp"\
+            -o -name "*.cxx"\
+> cscope.files
+
+# -b: just build
+# -q: create inverted index
+# -R: Recurse directories for files.
+# -k: Kernel Mode - don't use /usr/include for #include files.
+cscope -i cscope.files -Rbkq

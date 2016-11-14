@@ -1,0 +1,17 @@
+"=============================================================================
+"     FileName: .vimrc.before.fork
+"         Desc: 
+"       Author: ChengYi
+"        Email: chengyi@antiy.cn
+"     HomePage: http://www.antiy.com/
+"      Created: 2016-04-28 11:08:26
+"      Version: 0.0.1
+"   LastChange: 2016-04-28 11:08:26
+"      History:
+"               0.0.1 | ChengYi | init
+"=============================================================================
+"Used to choose vim plugin,details see .vimrc.bundles
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python',]
+
+"Used to change .vimswap .vimundo .vimviews .vimbackup directory
+let g:spf13_consolidated_directory = $HOME . '/.vim/'

@@ -1,0 +1,247 @@
+"Plugin{
+"cscope {
+" 用Cscope自己的话说 - "你可以把它当做是超过频的ctags"
+if has("cscope")
+    "使用|:cstag|而不是默认的:tag行为
+    set cst
+    "设定可以使用 quickfix 窗口来查看 cscope 结果
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    "使支持用 Ctrl+]  和 Ctrl+t 快捷键在代码间跳转
+    set cscopetag
+    "如果你想反向搜索顺序设置为1
+    set csto=1
+
+    "在当前目录中添加任何数据库
+    function! LoadCscope()
+        let db = findfile("cscope.out", ".;")
+        if (!empty(db))
+            let path = strpart(db, 0, match(db, "/cscope.out$"))
+            set nocscopeverbose " suppress 'duplicate connection' error
+            exe "cs add " . db . " " . path
+            set cscopeverbose
+        endif
+    endfunction
+    au BufEnter /* call LoadCscope()
+
+    set cscopeverbose
+    "快捷键设置
+    "查找本 C 符号(可以跳过注释)
+    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    "查找本定义
+    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    "查找调用本函数的函数
+    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    "查找本字符串
+    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    "查找本 egrep 模式
+    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    "查找本文件
+    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    "查找包含本文件的文件
+    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    "查找本函数调用的函数
+    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+endif
+" cscope end}
+
+" NerdTree {
+if isdirectory(expand("~/.vim/bundle/nerdtree"))
+    let NERDTreeQuitOnOpen=0
+endif
+" NerdTree end}
+
+" SingleCompile {
+if isdirectory(expand("~/.vim/bundle/SingleCompile"))
+    nmap <F9> :SCCompile<cr>
+
+    nmap <F10> :SCCompileRun<cr>
+    autocmd Filetype cpp nmap <buffer> <F9> :SCCompileAF -std=c++11 <CR>
+    autocmd Filetype cpp nmap <buffer> <F10> :SCCompileRunAF -std=c++11 <CR>
+endif
+" SingleCompile end}
+
+" syntastic {
+if isdirectory(expand("~/.vim/bundle/syntastic"))
+    let g:syntastic_error_symbol='>>'
+    let g:syntastic_warning_symbol='>'
+    let g:syntastic_check_on_open=1
+    let g:syntastic_check_on_wq=1
+    let g:syntastic_enable_highlighting=1
+    " add other include dirs
+    let g:syntastic_c_include_dirs=['../include','include']
+    " 修改高亮的背景色, 适应主题
+    highlight SyntasticErrorSign guifg=yellow guibg=white
+
+    " add CPP syntastic support
+    let g:syntastic_cpp_check_header=1
+    let g:syntastic_cpp_compiler='g++'
+    let g:syntastic_cpp_compiler_options='-std=c++11 -stdlib=libc++'
+    let g:syntastic_cpp_include_dirs=['../include','include']
+
+    "Add python support
+    let g:syntastic_python_checkers=['pylint']
+    let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
+
+    " to see error location list
+    let g:syntastic_always_populate_loc_list=1
+    let g:syntastic_auto_loc_list=0
+    let g:syntastic_loc_list_height=5
+    function! ToggleErrors()
+        let old_last_winnr = winnr('$')
+        lclose
+        if old_last_winnr == winnr('$')
+            " Nothing was closed, open syntastic error location panel
+            Errors
+        endif
+    endfunction
+    "nnoremap <Leader>s :call ToggleErrors()<cr>
+    nnoremap <Leader>s :lopen<cr>
+    nnoremap <Leader>sn :lnext<cr>
+    nnoremap <Leader>sp :lprevious<cr>
+endif
+" syntastic end}
+
+" YouCompleteMe {
+if count(g:spf13_bundle_groups, 'youcompleteme')
+    "关闭加载.ycm_extra_conf.py提示
+    let g:ycm_confirm_extra_conf=0
+    " enable completion from tags
+    let g:ycm_collect_identifiers_from_tags_files = 1
+    "从第2个键入字符就开始罗列匹配项
+    let g:ycm_min_num_of_chars_for_completion=2"
+    "禁止缓存匹配项,每次都重新生成匹配项
+    " let g:ycm_cache_omnifunc=0
+    " 语法关键字补全
+    let g:ycm_seed_identifiers_with_syntax=1
+    "在注释输入中也能补全
+    let g:ycm_complete_in_comments = 1
+    "在字符串输入中也能补全
+    let g:ycm_complete_in_strings = 1
+    "注释和字符串中的文字也会被收入补全
+    let g:ycm_collect_identifiers_from_comments_and_strings = 0
+endif
+" YouCompleteMe end}
+
+" ctrlp {
+if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
+    "basic
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
+
+    nnoremap <Leader>b :CtrlPBuffer<Cr>
+endif
+" ctrlp end}
+
+" vim-airline {
+if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+    let g:airline_theme = 'luna'
+
+    "打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_nr_show = 0
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    nmap <leader>1 <Plug>AirlineSelectTab1
+    nmap <leader>2 <Plug>AirlineSelectTab2
+    nmap <leader>3 <Plug>AirlineSelectTab3
+    nmap <leader>4 <Plug>AirlineSelectTab4
+    nmap <leader>5 <Plug>AirlineSelectTab5
+    nmap <leader>6 <Plug>AirlineSelectTab6
+    nmap <leader>7 <Plug>AirlineSelectTab7
+    nmap <leader>8 <Plug>AirlineSelectTab8
+    nmap <leader>9 <Plug>AirlineSelectTab9
+    nmap <leader>- <Plug>AirlineSelectPrevTab
+    nmap <leader>+ <Plug>AirlineSelectNextTab
+
+    "关闭syntastic插件在airline的显示
+    let g:airline#extensions#syntastic#enabled = 0
+
+    " 关闭状态显示空白符号计数,这个对我用处不大"
+    let g:airline#extensions#whitespace#enabled = 0
+    let g:airline#extensions#whitespace#symbol = '!'
+
+    "关闭下面显示buffer
+    let g:airline_section_c = ' '
+endif
+" vim-airline end}
+
+" a.vim {
+" 用于切换C/C++头文件
+"    头/源文件切换命令
+"        :A 头文件／源文件切换
+"        :AS 分割窗后并切换头/源文件(切割为上下两个窗口)
+"        :AV 垂直切割窗口后切换头/源文件(切割为左右两个窗口)
+"        :AT 新建Vim标签式窗口后切换
+"        :AN 在多个匹配文件间循环切换
+"    将光标所在处单词作为文件名打开
+"        :IH 切换至光标所在文件
+"        :IHS 分割窗口后切换至光标所在文件(指将光标所在处单词作为文件名打开)
+"        :IHV 垂直分割窗口后切换
+"        :IHT 新建标签式窗口后切换
+"        :IHN 在多个匹配文件间循环切换
+"    快捷键操作
+"        <Leader>ih 切换至光标所在文件*
+"        <Leader>is 切换至光标所在处(单词所指)文件的配对文件(如光标所在处为foo.h，则切换至foo.c/foo.cpp...)
+"        <Leader>ihn 在多个匹配文件间循环切换
+" a.vim end}
+
+" AuthorInfo {
+if isdirectory(expand("~/.vim/bundle/authorinfo/"))
+    let g:vimrc_author='ChengYi'
+    let g:vimrc_email='chengyi@antiy.cn'
+    let g:vimrc_homepage='http://www.antiy.com/'
+
+    nmap <F4> :AuthorInfoDetect<cr>
+endif
+"}
+
+" ack.vim {
+if isdirectory(expand("~/.vim/bundle/ack.vim/"))
+    cnoreabbrev Ack Ack!
+    nnoremap <Leader>a :Ack!<Space>
+endif
+"}
+
+" vim-startify {
+set viminfo='100,n$HOME/.vim/bundle/viminfo
+" }
+" Plugin end}
+
+"General{
+"
+" 常规模式下用空格键来开关光标行所在折叠（注：zR 展开所有折叠，zM 关闭所有折叠）
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+"设置vim折叠方式
+set foldmethod=indent
+
+"Input method delay
+set ttimeoutlen=50
+
+" 常规模式下输入 cM 清除行尾 ^M 符号
+nmap cM :%s/\r$//g<CR>:noh<CR>
+
+"常规模式下在窗口间跳转;插入模式下,光标跳转
+imap <c-k> <Up>
+imap <c-j> <Down>
+imap <c-h> <Left>
+imap <c-l> <Right>
+
+"常规模式下,将<Tab>映射为%
+nnoremap <Tab> %
+"
+"General end}
+
+"Formatting {
+"
+"自动换行
+set wrap
+"显示相对行号
+set number
+set relativenumber
+"jk移动
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" 
+" Formatting end}

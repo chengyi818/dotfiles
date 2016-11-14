@@ -1,0 +1,6 @@
+--smart-case
+--sort-files
+--type-set=rst:ext:rst,txt
+--type-set=md:ext:mkd,md,markdown
+--type-set=dotfile:match:/^\..+/
+--nodotfile

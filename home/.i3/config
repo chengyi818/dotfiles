@@ -1,0 +1,269 @@
+# i3 config file
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Solarized Color Scheme
+set $base03 #002b36
+# background
+set $base01 #586e75
+#comments / secondary content
+set $base1 #93a1a1
+# body text / default code / primary content
+set $orange #cb4b16
+# constants
+set $red #dc322f
+# regex, special keywords
+set $blue #268bd2
+# reserved keywords
+set $cyan #2aa198
+# strings, numbers
+set $green #859900
+# operators, other keywords
+
+set $base01 #586e75
+# body text / default code / primary content
+set $base1 #93a1a1
+# comments / secondary content
+set $base3 #fdf6e3
+# background
+
+# Use Windows key as Mod
+set $mod Mod4
+# Use Alt key as Mod
+#set $mod Mod1
+
+# font for window titles. ISO 10646 = Unicode
+# change font for readability
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
+font pango:Terminus 11px
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec konsole
+
+# 无边框：$mod+u
+# 普通模式：$mod+t
+# 单像素边框：$mod+y
+bindsym $mod+t border normal
+bindsym $mod+u border none
+bindsym $mod+y border 1pixel
+
+# 新窗口边框类型
+new_window 1pixel
+
+# 暂存器使用
+# mod shift -  隐藏当前窗口
+# mod -        现实第一个暂存的窗口
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# scrot fullscreen
+#bindsym --release Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+bindsym --release Print exec scrot -e 'mv $f /tmp/'
+
+# scrot - select window or rectangle
+#bindsym --release $mod+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+bindsym --release $mod+Print exec scrot -s -e 'mv $f /tmp/'
+
+#i3lock
+bindsym $mod+o exec i3lock
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+D exec gksu dmenu_run
+
+# change focus
+# default keys altered to match those of vim
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+# default keys altered to match those of vim
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horiZontal orientation (Tall)
+# need to change this because "Mod+h" no longer free
+bindsym $mod+s split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+c layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindcode $mod+d focus child
+
+# 关闭Chrome标题栏
+for_window [class="Google-chrome" title="Google Chrome"] border none
+
+#关闭鼠标自动聚焦
+focus_follows_mouse no
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS0
+
+# 修改工作区名
+set $WS1 1_Work
+set $WS2 2_Konsole
+set $WS3 3_Editor
+set $WS4 4_Chrome
+set $WS5 5_XMind
+set $WS6 6_WizNote
+set $WS7 7_Roxterm
+set $WS8 8_VirtutalBox
+set $WS9 9
+set $WS0 0_Music
+
+# 快捷启动
+bindsym mod1+0 exec --no-startup-id netease-cloud-music,workspace $WS0
+bindsym mod1+2 exec --no-startup-id konsole,workspace $WS2
+bindsym mod1+3 exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 emacs,workspace $WS3
+bindsym mod1+4 exec --no-startup-id google-chrome,workspace $WS4
+bindsym mod1+5 exec --no-startup-id XMind,workspace $WS5
+bindsym mod1+6 exec --no-startup-id WizNote,workspace $WS6
+bindsym mod1+7 exec --no-startup-id roxterm,workspace $WS7
+bindsym mod1+8 exec --no-startup-id virtualbox,workspace $WS8
+#程序在指定容器打开
+assign [class="(?i)netease-cloud-music"] $WS0
+assign [class="(?i)emacs"] $WS3
+assign [class="(?i)google-chrome"] $WS4
+assign [class="(?i)XMind"] $WS5
+assign [class="(?i)WizNote"] $WS6
+assign [class="(?i)roxterm"] $WS7
+assign [class="(?i)vitualbox"] $WS8
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move workspace $WS1
+bindsym $mod+Shift+2 move workspace $WS2
+bindsym $mod+Shift+3 move workspace $WS3
+bindsym $mod+Shift+4 move workspace $WS4
+bindsym $mod+Shift+5 move workspace $WS5
+bindsym $mod+Shift+6 move workspace $WS6
+bindsym $mod+Shift+7 move workspace $WS7
+bindsym $mod+Shift+8 move workspace $WS8
+bindsym $mod+Shift+9 move workspace $WS9
+bindsym $mod+Shift+0 move workspace $WS0
+
+# 切换工作区
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to
+# upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+
+# These bindings trigger as soon as you enter the resize mode
+bindsym h resize grow width 10 px or 10 ppt
+bindsym j resize shrink height 10 px or 10 ppt
+bindsym k resize grow height 10 px or 10 ppt
+bindsym l resize shrink width 10 px or 10 ppt
+
+# same bindings, but for the arrow keys
+bindsym Left resize shrink width 10 px or 10 ppt
+bindsym Down resize grow height 10 px or 10 ppt
+bindsym Up resize shrink height 10 px or 10 ppt
+bindsym Right resize grow width 10 px or 10 ppt
+
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# Start i3bar to display a workspace bar
+# plus the system information i3status
+
+bar {
+#output            DisplayPort-0
+status_command    i3status --config ~/.i3status.conf
+position          top
+mode              dock
+hidden_state      show
+workspace_buttons yes
+#tray_output       primary
+
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+colors {
+background #000000
+statusline #ffffff
+
+focused_workspace  #ffffff #285577
+active_workspace   #ffffff #333333
+inactive_workspace #888888 #222222
+urgent_workspace   #ffffff #900000
+}
+}
+
+# change colour: border background text indicator
+client.focused          $base3 $base3 $base01 #333333
+client.focused_inactive $base1 $base1 #base01 #000000
+client.unfocused        $base01 $base01 $base1 #000000
+client.urgent           $base3 $base3 $red #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000
+
+# Run when starting
+exec --no-startup-id /home/chengyi/personal_shell/xrandr.sh
+exec --no-startup-id ss-qt5
+exec --no-startup-id nm-applet
+exec --no-startup-id gnome-sound-applet
+exec xbacklight -set 50
+exec --no-startup-id WizNote
+exec --no-startup-id google-chrome
+exec --no-startup-id dropbox start
+exec --no-startup-id netease-cloud-music

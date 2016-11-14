@@ -1,0 +1,58 @@
+#!/bin/sh
+#=============================================================================
+#     FileName: csclean
+#         Desc: This script is used to delete vim plugin cscope database.Option "-x" used to delete binary file and "-t" used to delete ctags database "tags" together.
+#       Author: ChengYi
+#        Email: chengyi@antiy.cn
+#     HomePage: http://www.antiy.com/
+#      Created: 2016-04-28 10:25:07
+#      Version: 0.0.1
+#   LastChange: 2016-04-28 10:25:07
+#      History:
+#               0.0.1 | ChengYi | init
+#=============================================================================
+
+################################################### BASIC FUNC
+delete_cscope()
+{
+    find $(pwd) -name "cscope.*" | xargs -t -i rm -rf {}
+}
+
+delete_binary()
+{
+    find -type f -executable -exec sh -c "file -i '{}' | grep -q 'x-executable; charset=binary'" \; -print | xargs -t -i rm -rf {}
+}
+
+delete_ctags()
+{
+    find $(pwd) -name "tags" | grep -v '.*/\.[^/]*/.*' | xargs -t -i rm -rf {}
+}
+
+echo_help()
+{
+    echo "usage:"
+    echo "  default delete_cscope"
+    echo "  -x delete_binary"
+    echo "  -t delete_cscope && delete_ctags"
+    echo "  -a delete_cscope && delete_ctags && delete_binary"
+}
+
+################################# main
+if [ -z "$1" ]; then
+    delete_cscope
+fi
+
+if [ -n "$1" ]; then
+    if [ $1 == '-x' ]; then
+        delete_binary
+    elif [ $1 == '-t' ]; then
+        delete_cscope
+        delete_ctags
+    elif [ $1 == '-a' ]; then
+        delete_cscope
+        delete_ctags
+        delete_binary
+    elif [ $1 == '-h' ]; then
+        echo_help
+    fi
+fi
