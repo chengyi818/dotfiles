@@ -62,8 +62,8 @@ endif
 
 " syntastic {
 if isdirectory(expand("~/.vim/bundle/syntastic"))
-    let g:syntastic_error_symbol='>>'
-    let g:syntastic_warning_symbol='>'
+    let g:syntastic_error_symbol='E'
+    let g:syntastic_warning_symbol='W'
     let g:syntastic_check_on_open=1
     let g:syntastic_check_on_wq=1
     let g:syntastic_enable_highlighting=1
@@ -101,8 +101,15 @@ if isdirectory(expand("~/.vim/bundle/syntastic"))
 endif
 " syntastic end}
 
+" PyMode {
+    if isdirectory(expand("~/.vim/bundle/python-mode"))
+        let g:pymode_lint = 0
+    endif
+" }
+ 
 " YouCompleteMe {
 if count(g:spf13_bundle_groups, 'youcompleteme')
+    "自动补全部分
     "关闭加载.ycm_extra_conf.py提示
     let g:ycm_confirm_extra_conf=0
     " enable completion from tags
