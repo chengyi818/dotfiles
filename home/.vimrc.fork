@@ -235,8 +235,10 @@ imap <c-j> <Down>
 imap <c-h> <Left>
 imap <c-l> <Right>
 
-"常规模式下,将<Tab>映射为%
+"常规模式和可视模式下,将<Tab>映射为%
 nnoremap <Tab> %
+vnoremap <Tab> %
+
 "
 "General end}
 
