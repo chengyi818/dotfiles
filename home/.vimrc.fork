@@ -197,8 +197,8 @@ endif
 " AuthorInfo {
 if isdirectory(expand("~/.vim/bundle/authorinfo/"))
     let g:vimrc_author='ChengYi'
-    let g:vimrc_email='chengyi@antiy.cn'
-    let g:vimrc_homepage='http://www.antiy.com/'
+    let g:vimrc_email='chengyi818@foxmail.com'
+    let g:vimrc_homepage=''
 
     nmap <F4> :AuthorInfoDetect<cr>
 endif
@@ -212,7 +212,7 @@ endif
 "}
 
 " vim-startify {
-set viminfo='100,n$HOME/.vim/bundle/viminfo
+set viminfo='100,n$HOME/.vim/viminfo
 " }
 " Plugin end}
 
