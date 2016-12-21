@@ -29,6 +29,14 @@ delete_ctags()
     find $(pwd) -name "tags" | grep -v '.*/\.[^/]*/.*' | xargs -t -i rm -rf {}
 }
 
+delete_vim()
+{
+    rm -rf ~/.vim/viminfo
+    rm -rf ~/.vim/vimviews
+    rm -rf ~/.vim/vimundo
+    rm -rf ~/.vim/vimbackup
+    rm -rf ~/.vim/vimswap
+}
 echo_help()
 {
     echo "usage:"
@@ -37,6 +45,7 @@ echo_help()
     echo "  -t delete_cscope && delete_ctags"
     echo "  -a delete_cscope && delete_ctags && delete_binary"
 }
+
 
 ################################# main
 if [ -z "$1" ]; then
@@ -55,5 +64,7 @@ if [ -n "$1" ]; then
         delete_binary
     elif [ $1 == '-h' ]; then
         echo_help
+    elif [ $1 == '-v' ]; then
+        delete_vim
     fi
 fi
