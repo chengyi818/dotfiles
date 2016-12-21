@@ -80,7 +80,7 @@ if isdirectory(expand("~/.vim/bundle/syntastic"))
 
     "Add python support
     let g:syntastic_python_checkers=['pylint']
-    let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
+    let g:syntastic_python_pylint_args='--disable=C0111,R0903'
 
     " to see error location list
     let g:syntastic_always_populate_loc_list=1
