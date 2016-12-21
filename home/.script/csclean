@@ -44,6 +44,7 @@ echo_help()
     echo "  -x delete_binary"
     echo "  -t delete_cscope && delete_ctags"
     echo "  -a delete_cscope && delete_ctags && delete_binary"
+    echo "  -v delete_vim"
 }
 
 
