@@ -37,6 +37,7 @@ delete_vim()
     rm -rf ~/.vim/vimbackup
     rm -rf ~/.vim/vimswap
 }
+
 echo_help()
 {
     echo "usage:"
@@ -63,9 +64,9 @@ if [ -n "$1" ]; then
         delete_cscope
         delete_ctags
         delete_binary
-    elif [ $1 == '-h' ]; then
-        echo_help
     elif [ $1 == '-v' ]; then
         delete_vim
+    elif [ $1 == '-h' ]; then
+        echo_help
     fi
 fi
