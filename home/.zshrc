@@ -162,3 +162,6 @@ export AJOKE_DIR=~/code/ajoke/
 export export PATH=$AJOKE_DIR/bin:$NDK_HOME:$PATH
 export PERL5LIB="$AJOKE_DIR/etc/perl:$PERL5LIB";
 
+
+chmod +x ~/.vocab
+~/.vocab
