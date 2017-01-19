@@ -121,6 +121,3 @@ alias  tmux="tmux -2"
 export AJOKE_DIR=~/code/ajoke/
 export export PATH=$AJOKE_DIR/bin:$PATH
 export PERL5LIB="$AJOKE_DIR/etc/perl:$PERL5LIB";
-
-chmod +x ~/.vocab
-~/.vocab
