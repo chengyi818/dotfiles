@@ -1,5 +1,5 @@
 #/bin/bash
-pkill fcitx && fcitx && sogou-qimpanel
+pkill fcitx && fcitx && sogou-qimpanel && sogou-qimpanel-watchdog
 fcitx-autostart &
 #fcitx-qimpanel
 
