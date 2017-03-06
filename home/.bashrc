@@ -122,6 +122,4 @@ export AJOKE_DIR=~/code/ajoke/
 export export PATH=$AJOKE_DIR/bin:$PATH
 export PERL5LIB="$AJOKE_DIR/etc/perl:$PERL5LIB";
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android-studio/bin:/home/chengyi/code/Android/Sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin:/home/chengyi/code/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:$PATH
-
-chmod +x ~/.vocab
-~/.vocab
+export USE_CCACHE=1
