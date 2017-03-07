@@ -35,7 +35,7 @@ values."
                       ;; auto-completion-private-snippets-directory '~/.spacemacs.d/snippets
                       )
      better-defaults
-     ;; emacs-lisp
+     emacs-lisp
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      ;; git
@@ -44,7 +44,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
+     spell-checking
      syntax-checking
      ;; version-control
      (c-c++ :variables
