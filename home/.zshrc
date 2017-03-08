@@ -54,7 +54,7 @@ plugins=(git autojump extract colored-man-pages sudo copydir history copyfile co
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android-studio/bin:/home/chengyi/code/Android/Sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin:/home/chengyi/code/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin"
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android-studio/bin:/home/chengyi/code/Android/Sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin:/home/chengyi/code/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -159,7 +159,7 @@ alias studio="nohup bash /opt/android-studio/bin/studio.sh &"
 
 #ajoke for java code complete
 export AJOKE_DIR=~/code/ajoke/
-export export PATH=$AJOKE_DIR/bin:$NDK_HOME:$PATH
+export PATH=$AJOKE_DIR/bin:$NDK_HOME:$PATH
 export PERL5LIB="$AJOKE_DIR/etc/perl:$PERL5LIB";
 
 
