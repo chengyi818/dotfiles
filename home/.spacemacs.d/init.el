@@ -37,29 +37,44 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-private-snippets-directory nil
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t
+                      )
      better-defaults
      emacs-lisp
+     (colors :variables
+             colors-enable-nyan-cat-progress-bar t)
      ;; git
      markdown
      ;; org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
+     ;; spell-checking
      syntax-checking
      version-control
      gtags
      (python :variables
              python-enable-yapf-format-on-save t)
      shell-scripts
-     ;; semantic ;; this layer will stuck 
+     (chinese :packages youdao-dictionary fcitx
+              :variables chinese-enable-fcitx nil
+              chinese-enable-youdao-dict t)
+     ;; semantic ;; this layer will stuck
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -115,7 +130,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner 'random
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -218,7 +233,7 @@ values."
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'bottom
+   dotspacemacs-which-key-position 'right-then-bottom
    ;; Control where `switch-to-buffer' displays the buffer. If nil,
    ;; `switch-to-buffer' displays the buffer in the current window even if
    ;; another same-purpose window is available. If non-nil, `switch-to-buffer'
@@ -312,6 +327,19 @@ values."
   before packages are loaded. If you are unsure, you should try in setting them in
   `dotspacemacs/user-config' first."
 
+  (set-language-environment "UTF-8")
+  (set-default-coding-systems 'utf-8)
+  (set-buffer-file-coding-system 'utf-8-unix)
+  (set-clipboard-coding-system 'utf-8-unix)
+  (set-file-name-coding-system 'utf-8-unix)
+  (set-keyboard-coding-system 'utf-8-unix)
+  (set-next-selection-coding-system 'utf-8-unix)
+  (set-selection-coding-system 'utf-8-unix)
+  (set-terminal-coding-system 'utf-8-unix)
+  (setq locale-coding-system 'utf-8)
+  (prefer-coding-system 'utf-8)
+
+
   (setq configuration-layer--elpa-archives
         '(("popkit" . "elpa.popkit.org/packages/")))
   )
@@ -323,6 +351,48 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; auto format
+  (defun clang-format-for-filetype ()
+    "Run clang-format if the current file has a file extensions
+  in the filetypes list."
+    (let ((filetypes '("c" "cpp")))
+      (when (member (file-name-extension (buffer-file-name)) filetypes)
+        (clang-format-buffer))))
+  (add-hook 'before-save-hook 'clang-format-for-filetype)
+
+  ;; Make evil-mode up/down operate in screen lines instead of logical lines
+  (define-key evil-motion-state-map "j" 'evil-next-visual-line)
+  (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
+  ;; Also in visual mode
+  (define-key evil-visual-state-map "j" 'evil-next-visual-line)
+  (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+
+  ;;insert-state use control+l to move right
+  (define-key evil-insert-state-map (kbd "C-l")'right-char)
+
+  ;; always enable indent-guide
+  (spacemacs/toggle-indent-guide-globally-on)
+  ;; Indent configuration
+  ;; For global
+  (setq-default tab-width 4)
+  ;; (setq-default indent-tabs-mode t)
+  (setq-default evil-shift-width 4)
+  ;; For c-mode
+  (setq c-default-style "k&r")
+  (setq c-basic-offset 4)
+  ;; For python-mode
+  (setq python-guess-indent nil
+        python-indent-offset 4
+        python-indent 4)
+
+  ;;evil-surround
+  (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
+                                                evil-surround-pairs-alist))
+
+  ;; (setenv "PATH" "/usr/bin/python3")
+  ;; (setq exec-path (split-string (getenv "PATH") path-separator))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
