@@ -50,7 +50,8 @@ values."
      syntax-checking
      version-control
      gtags
-     python
+     (python :variables
+             python-enable-yapf-format-on-save t)
      shell-scripts
      ;; semantic ;; this layer will stuck 
      )
