@@ -165,3 +165,6 @@ export PERL5LIB="$AJOKE_DIR/etc/perl:$PERL5LIB";
 
 chmod +x ~/.vocab
 ~/.vocab
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
