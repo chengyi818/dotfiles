@@ -79,8 +79,8 @@ if isdirectory(expand("~/.vim/bundle/syntastic"))
     let g:syntastic_cpp_include_dirs=['../include','include']
 
     "Add python support
-    let g:syntastic_python_checkers=['pylint3']
-    let g:syntastic_python_pylint_args='--disable=R0903'
+    "let g:syntastic_python_checkers=['pylint3']
+    "let g:syntastic_python_pylint_args='--disable=R0903'
 
     " to see error location list
     let g:syntastic_always_populate_loc_list=1
@@ -103,7 +103,8 @@ endif
 
 " PyMode {
     if isdirectory(expand("~/.vim/bundle/python-mode"))
-        let g:pymode_lint = 0
+        let g:pymode_lint = 1
+        let g:pymode_lint_on_write = 1
     endif
 " }
  
