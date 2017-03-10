@@ -1,0 +1,1 @@
+../backup/.spacemacs.d_now
