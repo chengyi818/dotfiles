@@ -60,9 +60,10 @@ values."
      ;; spell-checking
      syntax-checking
      version-control
-     gtags
+     cscope
      (python :variables
              python-enable-yapf-format-on-save t)
+     c-c++
      shell-scripts
      (chinese :packages youdao-dictionary fcitx
               :variables chinese-enable-fcitx nil
@@ -153,7 +154,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
