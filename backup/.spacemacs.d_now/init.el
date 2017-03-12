@@ -48,39 +48,43 @@ values."
                       auto-completion-enable-snippets-in-popup t
                       )
      better-defaults
-     emacs-lisp
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
+     imenu-list
      git
-     markdown
      ;; org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
      version-control
      cscope
-     (python :variables
-             python-enable-yapf-format-on-save t)
+     ;; lang layers
      c-c++
-     shell-scripts
+     markdown
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     emacs-lisp
      (chinese :packages youdao-dictionary fcitx
               :variables chinese-enable-fcitx t
               chinese-enable-youdao-dict t)
-     ;; semantic ;; this layer will stuck
+     (python :variables
+             python-enable-yapf-format-on-save t)
+     shell-scripts
+     chengyi_make_header
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
+                                      (smartparens :location (recipe :fetcher github :repo "Fuco1/smartparens" :commit "73b9dd0c70f381aee2da8c8b27f79019aa80dcae"))
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    smartparens)
+                                    ;; smartparens
+                                    )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -319,7 +323,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -347,7 +351,7 @@ you should place your code here."
   (define-coding-system-alias 'UTF-8 'utf-8)
 
   ;;insert-state use control+l to move right
-  (define-key evil-insert-state-map (kbd "C-l")'right-char)
+  (define-key evil-insert-state-map (kbd "C-l") 'right-char)
 
   ;; always enable indent-guide
   (spacemacs/toggle-indent-guide-globally-on)
