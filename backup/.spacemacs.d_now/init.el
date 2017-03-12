@@ -51,7 +51,7 @@ values."
      emacs-lisp
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
-     ;; git
+     git
      markdown
      ;; org
      (shell :variables
@@ -66,7 +66,7 @@ values."
      c-c++
      shell-scripts
      (chinese :packages youdao-dictionary fcitx
-              :variables chinese-enable-fcitx nil
+              :variables chinese-enable-fcitx t
               chinese-enable-youdao-dict t)
      ;; semantic ;; this layer will stuck
      )
@@ -79,7 +79,8 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    smartparens)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -147,7 +148,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(
+                         spacemacs-dark
                          spacemacs-light)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -234,7 +236,7 @@ values."
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'bottom
+   dotspacemacs-which-key-position 'right
    ;; Control where `switch-to-buffer' displays the buffer. If nil,
    ;; `switch-to-buffer' displays the buffer in the current window even if
    ;; another same-purpose window is available. If non-nil, `switch-to-buffer'
@@ -254,7 +256,7 @@ values."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -286,7 +288,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -330,6 +332,7 @@ values."
 
   (setq configuration-layer--elpa-archives
         '(("popkit" . "elpa.popkit.org/packages/")))
+
   )
 
 (defun dotspacemacs/user-config ()
