@@ -51,7 +51,7 @@ values."
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      imenu-list
-     ;; git
+     git
      ;; org
      ;; spell-checking
      syntax-checking
@@ -70,7 +70,7 @@ values."
      (python :variables
              python-enable-yapf-format-on-save t)
      shell-scripts
-     chengyi_make_header
+     chengyi
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -349,12 +349,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
   ;; set coding
   (define-coding-system-alias 'UTF-8 'utf-8)
-
-  ;;insert-state use control+l to move right
-  (define-key evil-insert-state-map (kbd "C-l") 'right-char)
 
   ;; always enable indent-guide
   (spacemacs/toggle-indent-guide-globally-on)
