@@ -50,7 +50,7 @@
   )
 (defun make-py-header ()
   (interactive )
-  (insert "#!/usr/bin/env python\n")
+  (insert "#!/usr/bin/env python3\n")
   (insert "# -*- coding: UTF-8 -*-\n")
   ;; (insert "\"\"\"\n")
   (insert "# Author: " make-header-author-name "\n")

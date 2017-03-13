@@ -51,7 +51,7 @@ values."
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      imenu-list
-     git
+     ;; git
      ;; org
      ;; spell-checking
      syntax-checking
@@ -77,13 +77,12 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      (smartparens :location (recipe :fetcher github :repo "Fuco1/smartparens" :commit "73b9dd0c70f381aee2da8c8b27f79019aa80dcae"))
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    ;; smartparens
+                                    evil-unimpaired
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -334,8 +333,12 @@ values."
   before packages are loaded. If you are unsure, you should try in setting them in
   `dotspacemacs/user-config' first."
 
+  ;(setq configuration-layer--elpa-archives
+        ;'(("popkit" . "elpa.popkit.org/packages/")))
   (setq configuration-layer--elpa-archives
-        '(("popkit" . "elpa.popkit.org/packages/")))
+        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
+          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
 
   )
 
