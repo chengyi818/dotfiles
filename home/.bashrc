@@ -12,7 +12,6 @@ alias csclean="~/.script/csclean"
 alias YCM="~/.script/YouCompleteMe.sh"
 alias list="svn st -q"
 alias svnmeld="svn diff --diff-cmd=meld"
-alias emacs="nohup env LC_CTYPE=zh_CN.UTF-8 emacs &;rm nohup.out"
 
 ######################################
 # make image related
@@ -63,7 +62,6 @@ alias cmount="mount | column -t"
 sbs(){ du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';}
 alias intercept="sudo strace -ff -e trace=write -e write=1,2 -p"
 alias meminfo='free -m -l -t'
-alias ps?="ps aux | grep"
 alias volume="amixer get Master | sed '1,4 d' | cut -d [ -f 2 | cut -d ] -f 1"
 
 #Network

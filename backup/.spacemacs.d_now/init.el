@@ -36,6 +36,8 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+
+     ; completion
      helm
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
@@ -47,29 +49,41 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
                       )
+     ; checkers
+     syntax-checking
+     ; emacs
      better-defaults
+     ; tools
+     imenu-list
+     (ranger :variables
+             ranger-show-preview t)
+     ; themes
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
-     imenu-list
-     git
-     ;; org
-     ;; spell-checking
-     syntax-checking
-     version-control
+     ; tags
      cscope
-     ;; lang layers
+     ; fun
+     emoji
+     ; source-control
+     git
+     github
+     version-control
+     ; lang
      c-c++
      markdown
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      emacs-lisp
-     (chinese :packages youdao-dictionary fcitx
-              :variables chinese-enable-fcitx t
-              chinese-enable-youdao-dict t)
      (python :variables
              python-enable-yapf-format-on-save t)
      shell-scripts
+     ; intl
+     (chinese :packages youdao-dictionary fcitx
+              :variables chinese-enable-fcitx t
+              chinese-enable-youdao-dict t)
+
+     ; personal
      chengyi
      )
    ;; List of additional packages that will be installed without being
@@ -333,8 +347,8 @@ values."
   before packages are loaded. If you are unsure, you should try in setting them in
   `dotspacemacs/user-config' first."
 
-  ;(setq configuration-layer--elpa-archives
-        ;'(("popkit" . "elpa.popkit.org/packages/")))
+                                        ;(setq configuration-layer--elpa-archives
+                                        ;'(("popkit" . "elpa.popkit.org/packages/")))
   (setq configuration-layer--elpa-archives
         '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
           ("org-cn"   . "https://elpa.zilongshanren.com/org/")
@@ -376,3 +390,23 @@ you should place your code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ranger magithub magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht emoji-cheat-sheet-plus company-emoji smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup youdao-dictionary yapfify xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org spaceline shell-pop restart-emacs request rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree mwim multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum live-py-mode linum-relative link-hint insert-shebang info+ indent-guide hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-cscope helm-company helm-c-yasnippet helm-ag google-translate golden-ratio git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-pos-tip flx-ido fish-mode fill-column-indicator fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump disaster diff-hl define-word cython-mode company-statistics company-shell company-quickhelp company-c-headers company-anaconda column-enforce-mode color-identifiers-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
