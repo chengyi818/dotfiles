@@ -347,12 +347,12 @@ values."
   before packages are loaded. If you are unsure, you should try in setting them in
   `dotspacemacs/user-config' first."
 
-                                        ;(setq configuration-layer--elpa-archives
-                                        ;'(("popkit" . "elpa.popkit.org/packages/")))
   (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+        '(("popkit" . "elpa.popkit.org/packages/")))
+  ;; (setq configuration-layer--elpa-archives
+  ;;       '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+  ;;         ("org-cn"   . "https://elpa.zilongshanren.com/org/")
+  ;;         ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
 
   ;; disable environment variable warning
   (setq exec-path-from-shell-check-startup-files nil)
