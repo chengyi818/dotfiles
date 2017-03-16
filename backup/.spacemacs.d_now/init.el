@@ -357,8 +357,6 @@ values."
   ;;         ("org-cn"   . "https://elpa.zilongshanren.com/org/")
   ;;         ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
 
-  ;; disable environment variable warning
-  (setq exec-path-from-shell-check-startup-files nil)
   )
 
 (defun dotspacemacs/user-config ()

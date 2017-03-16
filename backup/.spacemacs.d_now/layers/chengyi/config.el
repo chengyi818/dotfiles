@@ -23,3 +23,7 @@
          :empty-lines 1)
         ))
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("Learning" . ?L) ("Need_buy" . ?N)("Wiznote" . ?W)("Once" . ?O)("Twice" . ?T)))
+
+
+;; disable environment variable warning
+(setq exec-path-from-shell-check-startup-files nil)
