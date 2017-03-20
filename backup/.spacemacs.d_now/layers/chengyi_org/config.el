@@ -1,11 +1,10 @@
 ;; org-mode
-(setq org-agenda-files (list "~/Dropbox/org/GTD.org"))
+(setq org-agenda-files (list "~/Dropbox/org/"))
 (setq org-default-notes-file "~/Dropbox/org/GTD.org")
 (setq org-todo-keywords
       (quote (
               (sequence "TODO(t)" "|" "DONE(d)")
-              (sequence "SCHEDULED(s)" "|" "HOLD(h)")
-              (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+              (sequence "SCHEDULED(s)" "|" "SOMEDAY(S)")
               (sequence "|" "CANCELED(c)")
               )))
 (setq org-M-RET-may-split-line nil)
@@ -20,4 +19,11 @@
          "* [#B] %?\n  %i\n"
          :empty-lines 1)
         ))
-(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("Learning" . ?L) ("Wiznote" . ?W) ("Once" . ?O) ("Twice" . ?T)))
+
+(setq org-tag-alist '(
+                      ("@work" . ?w)
+                      ("@family" . ?f)
+                      ("learning" . ?l)
+                      ("personal" . ?p)
+                      ("Wiznote" . ?W)
+                      ))
