@@ -16,7 +16,7 @@
 ;; add multi-file journal
 (setq org-capture-templates
       '(("i" "Inbox" entry (file+headline "~/Dropbox/org/GTD.org" "Inbox")
-         "* [#B] %?\n  %i\n"
+         "* %?\n  %i\n"
          :empty-lines 1)
         ))
 
@@ -26,4 +26,5 @@
                       ("learning" . ?l)
                       ("personal" . ?p)
                       ("Wiznote" . ?W)
+                      ("Read" . ?r)
                       ))
