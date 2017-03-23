@@ -103,7 +103,7 @@ md5check() { md5sum "$1" | grep "$2";}
 alias makescript="fc -rnl | head -1 >"
 alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
 alias c="clear"
-alias ai="sudo apt-get install"
+alias ai="sudo proxychains apt-get install"
 alias t="tree -ah --du"
 
 #System info
