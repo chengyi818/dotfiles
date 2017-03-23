@@ -382,6 +382,8 @@ you should place your code here."
   (setq python-guess-indent nil
         python-indent-offset 4
         python-indent 4)
+  ;; show time
+  (display-time-mode t)
 
   ;;evil-surround
   (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
