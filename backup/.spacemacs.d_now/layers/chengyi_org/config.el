@@ -1,5 +1,7 @@
 ;; org-mode
-(setq org-agenda-files (list "~/Dropbox/org/"))
+(setq org-agenda-files (list "~/Dropbox/org/GTD.org"
+                             "~/Dropbox/org/crontab.org"
+                             ))
 (setq org-default-notes-file "~/Dropbox/org/GTD.org")
 (setq org-todo-keywords
       (quote (
@@ -24,6 +26,7 @@
                       ("@work" . ?w)
                       ("@family" . ?f)
                       ("learning" . ?l)
+                      ("book" . ?b)
                       ("personal" . ?p)
                       ("Wiznote" . ?W)
                       ("Read" . ?r)
