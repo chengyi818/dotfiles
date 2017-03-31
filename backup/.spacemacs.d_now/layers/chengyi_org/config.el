@@ -23,11 +23,11 @@
         ))
 
 (setq org-tag-alist '(
-                      ("@work" . ?w)
-                      ("@family" . ?f)
-                      ("learning" . ?l)
-                      ("book" . ?b)
-                      ("personal" . ?p)
+                      ("@Work" . ?w)
+                      ("@Family" . ?f)
+                      ("Learning" . ?l)
+                      ("Book" . ?b)
+                      ("Project" . ?p)
                       ("Wiznote" . ?W)
                       ("Read" . ?r)
                       ))
