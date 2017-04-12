@@ -1,6 +1,9 @@
 ;; org-mode
 (setq org-agenda-files (list "~/Dropbox/org/GTD.org"
                              "~/Dropbox/org/crontab.org"
+                             "~/Dropbox/org/Review_Daily.org"
+                             "~/Dropbox/org/Review_Weekly.org"
+                             "~/Dropbox/org/Review_Monthly.org"
                              ))
 (setq org-default-notes-file "~/Dropbox/org/GTD.org")
 (setq org-todo-keywords
