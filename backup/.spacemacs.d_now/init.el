@@ -389,11 +389,7 @@ you should place your code here."
   ;;evil-surround
   (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
                                                 evil-surround-pairs-alist))
-  ;; flycheck settings
-  ;; (defun my-c-mode-common-hook ()
-  ;;   (setq flycheck-clang-include-path (list ".")))
-  ;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-  )
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
