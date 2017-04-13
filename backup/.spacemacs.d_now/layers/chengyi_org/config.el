@@ -28,7 +28,7 @@
 (setq org-tag-alist '(
                       ("@Work" . ?w)
                       ("@Family" . ?f)
-                      ("Learning" . ?l)
+                      ("Kata" . ?k)
                       ("Book" . ?b)
                       ("Project" . ?p)
                       ("Wiznote" . ?W)
