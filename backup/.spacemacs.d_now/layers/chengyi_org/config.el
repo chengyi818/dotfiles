@@ -29,7 +29,7 @@
                       ("@Work" . ?w)
                       ("@Family" . ?f)
                       ("Kata" . ?k)
-                      ("Book" . ?b)
+                      ("Blog" . ?b)
                       ("Project" . ?p)
                       ("Wiznote" . ?W)
                       ("Read" . ?r)
