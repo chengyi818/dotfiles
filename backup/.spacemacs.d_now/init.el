@@ -368,7 +368,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-
   ;; always enable indent-guide
   (spacemacs/toggle-indent-guide-globally-on)
   ;; Indent configuration
@@ -389,14 +388,6 @@ you should place your code here."
   ;;evil-surround
   (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
                                                 evil-surround-pairs-alist))
-  ;; (defun magit-push-to-gerrit ()
-  ;;   (interactive)
-  ;;   (magit-git-command "push origin HEAD:refs/for/master" (magit-toplevel)))
-
-  ;; (magit-define-popup-action 'magit-push-popup
-  ;;   ?g
-  ;;   "Push to gerrit"
-  ;;   'magit-push-to-gerrit)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
