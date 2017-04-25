@@ -33,4 +33,5 @@
                       ("Project" . ?p)
                       ("Wiznote" . ?W)
                       ("Read" . ?r)
+                      ("Tech" . ?t)
                       ))
