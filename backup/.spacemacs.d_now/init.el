@@ -389,6 +389,14 @@ you should place your code here."
   ;;evil-surround
   (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
                                                 evil-surround-pairs-alist))
+  ;; (defun magit-push-to-gerrit ()
+  ;;   (interactive)
+  ;;   (magit-git-command "push origin HEAD:refs/for/master" (magit-toplevel)))
+
+  ;; (magit-define-popup-action 'magit-push-popup
+  ;;   ?g
+  ;;   "Push to gerrit"
+  ;;   'magit-push-to-gerrit)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
