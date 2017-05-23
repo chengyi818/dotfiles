@@ -104,6 +104,7 @@ alias makescript="fc -rnl | head -1 >"
 alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
 alias c="clear"
 alias ai="sudo proxychains apt-get install"
+alias pi="sudo pip3 install"
 alias t="tree -ah --du"
 
 #System info
