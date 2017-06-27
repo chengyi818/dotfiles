@@ -105,6 +105,8 @@ alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr 
 alias c="clear"
 alias ai="sudo proxychains apt-get install"
 alias pi3="sudo pip3 install"
+alias py="python2"
+alias py3="python3"
 alias t="tree -ah --du"
 
 #System info
