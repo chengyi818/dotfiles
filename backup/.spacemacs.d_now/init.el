@@ -410,6 +410,7 @@ This function is called at the very end of Spacemacs initialization."
      "."
      "/home/chengyi/code/linux_kernel_all/linux-4.10.6/include"
      "/home/chengyi/code/wheeljack3/cases/libs/libwheeljack/include"
+     "/home/chengyi/code/wheeljack3/cases/libs/libtoolkit/include"
      "/home/chengyi/Android/Sdk/ndk-bundle/platforms/android-23/arch-arm64/usr/include"
      )))
  '(package-selected-packages
