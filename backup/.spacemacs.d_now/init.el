@@ -407,6 +407,7 @@ This function is called at the very end of Spacemacs initialization."
  '(flycheck-gcc-include-path
    (quote
     (
+     "."
      "/home/chengyi/code/linux_kernel_all/linux-4.10.6/include"
      "/home/chengyi/code/wheeljack3/cases/libs/libwheeljack/include"
      "/home/chengyi/code/wheeljack3/cases/libs/libtoolkit/include"

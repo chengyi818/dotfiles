@@ -8,7 +8,7 @@
 (setq org-default-notes-file "~/Dropbox/org/GTD.org")
 (setq org-todo-keywords
       (quote (
-              (sequence "TODO(t)" "|" "DONE(d!)")
+              (sequence "TODO(t)" "|" "DONE(d)")
               (sequence "SCHEDULED(s)" "|" "SOMEDAY(S)")
               (sequence "|" "CANCELED(c)")
               )))
