@@ -85,7 +85,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias sourzsh="source ~/.zshrc"
 alias -s txt="vim"
 #alias emacs="env LC_CTYPE=zh_CN.UTF-8 nohup emacs &;disown;rm nohup.out"
-alias emacs="nohup env LC_CTYPE=zh_CN.UTF-8 emacs &;rm nohup.out"
+alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
 
 #chengyi personal config
 alias rebuild="~/.script/rebuild"
