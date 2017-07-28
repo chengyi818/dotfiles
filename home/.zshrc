@@ -54,7 +54,7 @@ plugins=(git autojump extract colored-man-pages sudo copydir history copyfile co
 
 # User configuration
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android-studio/bin:$PATH
+export PATH=~/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android-studio/bin:~/Android/Sdk/tools:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,7 +87,6 @@ alias -s txt="vim"
 #alias emacs="env LC_CTYPE=zh_CN.UTF-8 nohup emacs &;disown;rm nohup.out"
 alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
 
-#chengyi personal config
 alias rebuild="~/.script/rebuild"
 alias csclean="~/.script/csclean"
 alias list="svn st -q"
