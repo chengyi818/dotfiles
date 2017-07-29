@@ -34,4 +34,5 @@
                       ("Wiznote" . ?W)
                       ("Read" . ?r)
                       ("Tech" . ?t)
+                      ("Target" . ?T)
                       ))
