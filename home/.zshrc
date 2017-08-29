@@ -153,7 +153,8 @@ eval $(thefuck --alias)
 export NVM_DIR="/home/chengyi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export NDK_HOME=/home/chengyi/code/Android/Sdk/ndk-bundle/
+export NDK_HOME=/home/chengyi/Android/Sdk/ndk-bundle/
+export PATH=/home/chengyi/Android/Sdk/ndk-bundle/:$PATH
 
 #android repo
 alias repo="~/bin/repo"
