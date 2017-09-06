@@ -171,3 +171,11 @@ chmod +x ~/.vocab
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+function run() {
+    number=$1
+    shift
+    for n in $(seq $number); do
+        $@
+    done
+}
