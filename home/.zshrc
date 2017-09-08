@@ -181,5 +181,5 @@ function run() {
 }
 
 function emulator { 
-    cd "$(dirname "$(which emulator)")" && ./emulator "$@";
+    ( cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@" &; ) 
 }
