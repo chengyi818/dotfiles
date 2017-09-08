@@ -179,3 +179,7 @@ function run() {
         $@
     done
 }
+
+function emulator { 
+    cd "$(dirname "$(which emulator)")" && ./emulator "$@";
+}
