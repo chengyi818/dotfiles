@@ -1,6 +1,7 @@
 ;; org-mode
 (setq org-agenda-files (list "~/Dropbox/org/GTD.org"
                              "~/Dropbox/org/crontab.org"
+                             "~/Dropbox/org/blog.org"
                              "~/Dropbox/org/Review_Daily.org"
                              "~/Dropbox/org/Review_Weekly.org"
                              "~/Dropbox/org/Review_Monthly.org"
