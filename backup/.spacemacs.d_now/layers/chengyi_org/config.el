@@ -1,12 +1,12 @@
 ;; org-mode
-(setq org-agenda-files (list "~/Dropbox/org/GTD.org"
-                             "~/Dropbox/org/crontab.org"
-                             "~/Dropbox/org/blog.org"
-                             "~/Dropbox/org/Review_Daily.org"
-                             "~/Dropbox/org/Review_Weekly.org"
-                             "~/Dropbox/org/Review_Monthly.org"
+(setq org-agenda-files (list "~/Nutstore/org/GTD.org"
+                             "~/Nutstore/org/crontab.org"
+                             "~/Nutstore/org/blog.org"
+                             "~/Nutstore/org/Review_Daily.org"
+                             "~/Nutstore/org/Review_Weekly.org"
+                             "~/Nutstore/org/Review_Monthly.org"
                              ))
-(setq org-default-notes-file "~/Dropbox/org/GTD.org")
+(setq org-default-notes-file "~/Nutstore/org/GTD.org")
 (setq org-todo-keywords
       (quote (
               (sequence "TODO(t)" "|" "DONE(d)")
@@ -21,7 +21,7 @@
 ;; http://www.howardism.org/Technical/Emacs/journaling-org.html
 ;; add multi-file journal
 (setq org-capture-templates
-      '(("i" "Inbox" entry (file+headline "~/Dropbox/org/GTD.org" "Inbox")
+      '(("i" "Inbox" entry (file+headline "~/Nutstore/org/GTD.org" "Inbox")
          "* %?\n  %i\n"
          :empty-lines 1)
         ))
