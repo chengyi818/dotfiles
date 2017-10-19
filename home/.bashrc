@@ -126,3 +126,5 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 PATH=$PATH:/home/chengyi/code/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 B2E31FAF-B311-CCF6-4844-820EA397F3B5
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
