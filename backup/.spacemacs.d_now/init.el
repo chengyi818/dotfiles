@@ -63,8 +63,6 @@ values."
              colors-enable-nyan-cat-progress-bar t)
      ; tags
      cscope
-     ; fun
-     emoji
      ; source-control
      git
      github
