@@ -1,10 +1,10 @@
 ;; org-mode
 (setq org-agenda-files (list "~/Nutstore/org/GTD.org"
-                             "~/Nutstore/org/crontab.org"
-                             "~/Nutstore/org/blog.org"
-                             "~/Nutstore/org/Review_Daily.org"
-                             "~/Nutstore/org/Review_Weekly.org"
-                             "~/Nutstore/org/Review_Monthly.org"
+                             "~/Nutstore/org/crontab/crontab.org"
+                             "~/Nutstore/org/crontab/blog.org"
+                             "~/Nutstore/org/crontab/Review_Daily.org"
+                             "~/Nutstore/org/crontab/Review_Weekly.org"
+                             "~/Nutstore/org/crontab/Review_Monthly.org"
                              ))
 (setq org-default-notes-file "~/Nutstore/org/GTD.org")
 (setq org-todo-keywords
