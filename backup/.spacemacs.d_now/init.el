@@ -78,7 +78,10 @@ values."
             shell-default-position 'bottom)
      emacs-lisp
      (python :variables
-             python-enable-yapf-format-on-save t)
+             python-enable-yapf-format-on-save t
+             python-test-runner 'pytest
+             python-fill-column 99
+             python-sort-imports-on-save t)
      shell-scripts
      ; intl
      (chinese :packages youdao-dictionary fcitx
@@ -388,6 +391,7 @@ you should place your code here."
   ;;evil-surround
   (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
                                                 evil-surround-pairs-alist))
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
