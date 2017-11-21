@@ -160,14 +160,6 @@ export PATH=/home/chengyi/Android/Sdk/ndk-bundle/:$PATH
 alias repo="~/bin/repo"
 alias studio="nohup bash /opt/android-studio/bin/studio.sh &"
 
-#ajoke for java code complete
-export AJOKE_DIR=~/code/ajoke/
-export PATH=$AJOKE_DIR/bin:$NDK_HOME:$PATH
-export PERL5LIB="$AJOKE_DIR/etc/perl:$PERL5LIB";
-
-
-chmod +x ~/.vocab
-~/.vocab
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -186,4 +178,3 @@ function emulator {
 
 PATH=$PATH:/home/chengyi/code/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 B2E31FAF-B311-CCF6-4844-820EA397F3B5
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
