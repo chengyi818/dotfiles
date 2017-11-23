@@ -391,7 +391,8 @@ you should place your code here."
   ;;evil-surround
   (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
                                                 evil-surround-pairs-alist))
-
+  ;;ignore python3 RELP error
+  (setq python-shell-completion-native-enable nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
