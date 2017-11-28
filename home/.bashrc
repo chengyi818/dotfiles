@@ -1,26 +1,21 @@
 # .bashrc
-
 export PATH=~/bin:$PATH
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
-
 # User specific aliases and functions
 alias rebuild="~/.script/rebuild"
 alias csclean="~/.script/csclean"
 alias YCM="~/.script/YouCompleteMe.sh"
 alias list="svn st -q"
 alias svnmeld="svn diff --diff-cmd=meld"
-
 ######################################
 # make image related
 ######################################
 alias make1="make BRCM_MAX_JOBS=1"
 alias makeu="make userspace"
 alias makeb="make buildimage"
-
-
 #chengyi personal alias
 alias ls="ls --color=auto"
 alias ll="ls --color -al"
@@ -56,19 +51,16 @@ else
 echo "'$1' is not a valid file"
 fi
 }
-
 #System info
 alias cmount="mount | column -t"
 sbs(){ du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';}
 alias intercept="sudo strace -ff -e trace=write -e write=1,2 -p"
 alias meminfo='free -m -l -t'
 alias volume="amixer get Master | sed '1,4 d' | cut -d [ -f 2 | cut -d ] -f 1"
-
 #Network
 alias websiteget="wget --random-wait -r -p -e robots=off -U mozilla"
 alias listen="lsof -P -i -n"
 alias port='netstat -tulanp'
-
 #make terminal shoter and show git branch
 ## Parses out the branch name from .git/HEAD:
 find_git_branch () {
@@ -99,22 +91,16 @@ magenta=$'\[\e[1;35m\]'
    cyan=$'\[\e[1;36m\]'
   white=$'\[\e[1;37m\]'
  normal=$'\[\e[m\]'
-
 PROMPT_COMMAND="find_git_branch;$PROMPT_COMMAND"
 export PS1="$white[$magenta\u$white@$green\h$white:$cyan\W$yellow\$git_branch$white]\$ $normal"
-
 #enable python plugin thefuck
 # eval $(thefuck --alias)
-
 #for ack-grep tool
 alias ack="ack-grep"
-
 #for dstat tool
 alias dstat="dstat -cdlmnpsy"
-
 #force tmux support 256 color
 alias  tmux="tmux -2"
-
 #ajoke for java code complete
 export AJOKE_DIR=~/code/ajoke/
 export export PATH=$AJOKE_DIR/bin:$PATH
@@ -124,7 +110,5 @@ export USE_CCACHE=1
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
-PATH=$PATH:/home/chengyi/code/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 B2E31FAF-B311-CCF6-4844-820EA397F3B5
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
