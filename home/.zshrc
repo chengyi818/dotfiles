@@ -127,12 +127,6 @@ export PATH=/home/chengyi/Android/Sdk/ndk-bundle/:$PATH
 alias repo="~/bin/repo"
 alias studio="nohup bash /opt/android-studio/bin/studio.sh &"
 
-
-#ajoke for java code complete
-export AJOKE_DIR=~/code/ajoke/
-export PATH=$AJOKE_DIR/bin:$NDK_HOME:$PATH
-export PERL5LIB="$AJOKE_DIR/etc/perl:$PERL5LIB";
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -148,3 +142,6 @@ function emulator {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# support snap
+export PATH=/snap/bin/:$PATH
