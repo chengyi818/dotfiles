@@ -63,7 +63,6 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias sourzsh="source ~/.zshrc"
 alias -s txt="vim"
-#alias emacs="env LC_CTYPE=zh_CN.UTF-8 nohup emacs &;disown;rm nohup.out"
 alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
 alias rebuild="~/.script/rebuild"
 alias csclean="~/.script/csclean"
@@ -137,8 +136,8 @@ function run() {
         $@
     done
 }
-function emulator { 
-    ( cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@" &; ) 
+function emulator {
+    ( cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@" &; )
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
