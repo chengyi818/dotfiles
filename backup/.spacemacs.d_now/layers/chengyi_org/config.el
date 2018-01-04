@@ -34,6 +34,7 @@
                       ("Project" . ?p)
                       ("Wiznote" . ?W)
                       ("Read" . ?r)
+                      ("Dream" . ?d)
                       ("Tech" . ?t)
                       ("Target" . ?T)
                       ))
