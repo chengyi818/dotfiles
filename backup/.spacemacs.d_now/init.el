@@ -72,7 +72,8 @@ values."
      javascript
      yaml
      (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode)
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-clang-support t)
      markdown
      (shell :variables
             shell-default-height 30
@@ -394,6 +395,10 @@ you should place your code here."
                                                 evil-surround-pairs-alist))
   ;;ignore python3 RELP error
   (setq python-shell-completion-native-enable nil)
+
+  ;; c-c++ hook
+  (add-hook 'c-mode-hook 'c-c++/load-clang-args)
+  (add-hook 'c++-mode-hook 'c-c++/load-clang-args)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
