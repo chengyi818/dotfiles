@@ -6,11 +6,11 @@
 
 (defun magit-push-to-gerrit-master ()
   (interactive)
-  (magit-git-command "push origin HEAD:refs/for/master" (magit-toplevel)))
+  (magit-git-command-topdir "git push origin HEAD:refs/for/master"))
 
 (defun magit-push-to-gerrit-develop ()
   (interactive)
-  (magit-git-command "push origin HEAD:refs/for/develop" (magit-toplevel)))
+  (magit-git-command-topdir "git push origin HEAD:refs/for/develop"))
 
 (with-eval-after-load 'magit
   (progn
