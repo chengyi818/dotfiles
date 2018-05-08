@@ -101,34 +101,36 @@ alias dstat="dstat -cdlmnpsy"
 alias  tmux="tmux -2"
 #autojump setting
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
-#trash-cli setting
-#trash-put          将文件或目录移入回收站
-#trash-empty        清空回收站
-#trash-list         列出回收站中的文件
-#restore-trash      还原回收站中的文件
-#trash-rm           删除回首站中的单个文件
+
+# trash-cli setting
+# trash-put          将文件或目录移入回收站
+# trash-empty        清空回收站
+# trash-list         列出回收站中的文件
+# restore-trash      还原回收站中的文件
+# trash-rm           删除回首站中的单个文件
 alias rmf="/bin/rm"
 alias rm="trash-put"
 alias lstrash="trash-list"
-#全局搜索替换
-#sr wrong_word correct_word
-sr () {
-    sed -i "s/$1/$2/g" **/*(.)
-}
+
 #enable python plugin thefuck
 #安装命令 wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
 eval $(thefuck --alias)
+
+# node version manager
 export NVM_DIR="/home/chengyi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# android
 export NDK_HOME=/home/chengyi/Android/Sdk/ndk-bundle/
 export PATH=/home/chengyi/Android/Sdk/ndk-bundle/:$PATH
-#android repo
 alias repo="~/bin/repo"
-alias studio="nohup bash /opt/android-studio/bin/studio.sh &"
 
+# python pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# 重复运行shell命令
 function run() {
     number=$1
     shift
@@ -136,6 +138,7 @@ function run() {
         $@
     done
 }
+
 function emulator {
     ( cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@" &; )
 }
