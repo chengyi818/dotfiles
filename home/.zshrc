@@ -59,47 +59,23 @@ export ARCHFLAGS="-arch x86_64"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias sourzsh="source ~/.zshrc"
+# base alias
 alias -s txt="vim"
-alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
-alias rebuild="~/.script/rebuild"
-alias csclean="~/.script/csclean"
-alias list="svn st -q"
-alias YCM="~/.script/YouCompleteMe.sh"
-alias svnmeld="svn diff --diff-cmd=meld"
 alias ls="ls --color=auto"
 alias ll="ls --color -al"
 alias grep='grep --color=auto'
-mcd() { mkdir -p "$1"; cd "$1";}
-cls() { cd "$1"; ls;}
-backup() { cp "$1"{,.bak};}
-md5check() { md5sum "$1" | grep "$2";}
-alias makescript="fc -rnl | head -1 >"
-alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
 alias c="clear"
-alias ai="sudo proxychains apt-get install"
-alias pi3="sudo pip3 install"
+
+alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
+alias rebuild="~/.script/rebuild"
+alias csclean="~/.script/csclean"
+alias YCM="~/.script/YouCompleteMe.sh"
 alias py2="python2"
 alias py3="python3"
-alias t="tree -ah --du"
-#System info
-alias cmount="mount | column -t"
-sbs(){ du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';}
-alias intercept="sudo strace -ff -e trace=write -e write=1,2 -p"
 alias psg="ps aux | grep"
-alias meminfo='free -m -l -t'
-alias volume="amixer get Master | sed '1,4 d' | cut -d [ -f 2 | cut -d ] -f 1"
-#Network
-alias websiteget="wget --random-wait -r -p -e robots=off -U mozilla"
-alias listen="lsof -P -i -n"
-alias port='netstat -tulanp'
-#for dstat tool
 alias dstat="dstat -cdlmnpsy"
-#force tmux support 256 color
-alias  tmux="tmux -2"
-#autojump setting
+
+# autojump setting
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
 
 # trash-cli setting
@@ -113,7 +89,6 @@ alias rm="trash-put"
 alias lstrash="trash-list"
 
 #enable python plugin thefuck
-#安装命令 wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
 eval $(thefuck --alias)
 
 # node version manager
@@ -125,10 +100,26 @@ export NDK_HOME=/home/chengyi/Android/Sdk/ndk-bundle/
 export PATH=/home/chengyi/Android/Sdk/ndk-bundle/:$PATH
 alias repo="~/bin/repo"
 
+# support snap
+export PATH=/snap/bin/:$PATH
+
 # python pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# 小函数
+mcd() { mkdir -p "$1"; cd "$1";}
+cls() { cd "$1"; ls;}
+backup() { cp "$1"{,.bak};}
+md5check() { md5sum "$1" | grep "$2";}
+function emulator {
+    (cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@" &;)
+}
+sbs(){ du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';}
 
 # 重复运行shell命令
 function run() {
@@ -139,11 +130,16 @@ function run() {
     done
 }
 
-function emulator {
-    ( cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@" &; )
+# pet https://github.com/knqyf263/pet
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
 }
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# support snap
-export PATH=/snap/bin/:$PATH
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+stty -ixon
+bindkey '^s' pet-select

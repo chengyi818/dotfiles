@@ -1,0 +1,49 @@
+[[snippets]]
+  description = "重载zsh配置"
+  command = "source ~/.zshrc"
+  output = ""
+
+[[snippets]]
+  description = "更新vim插件"
+  command = "vim +BundleInstall! +BundleClean +q"
+  output = ""
+
+[[snippets]]
+  description = "编辑zsh配置"
+  command = "vim ~/.zshrc"
+  output = ""
+
+[[snippets]]
+  description = "proxychains apt安装"
+  command = "sudo proxychains apt-get install"
+  output = ""
+
+[[snippets]]
+  description = "python3 pip3 安装"
+  command = "sudo pip3 install"
+  output = ""
+
+[[snippets]]
+  description = "python2 pip2 安装"
+  command = "sudo pip2 install"
+  output = ""
+
+[[snippets]]
+  description = "展示mount信息"
+  command = "mount | column -t"
+  output = ""
+
+[[snippets]]
+  description = "监视指定进程strace信息"
+  command = "sudo strace -ff -e trace=write -e write=1,2 -p"
+  output = ""
+
+[[snippets]]
+  description = "查看端口port占用信息"
+  command = "netstat -tulanp"
+  output = ""
+
+[[snippets]]
+  description = "网络信息"
+  command = "lsof -P -i -n"
+  output = ""

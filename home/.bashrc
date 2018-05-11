@@ -8,14 +8,9 @@ fi
 alias rebuild="~/.script/rebuild"
 alias csclean="~/.script/csclean"
 alias YCM="~/.script/YouCompleteMe.sh"
-alias list="svn st -q"
-alias svnmeld="svn diff --diff-cmd=meld"
 ######################################
 # make image related
 ######################################
-alias make1="make BRCM_MAX_JOBS=1"
-alias makeu="make userspace"
-alias makeb="make buildimage"
 #chengyi personal alias
 alias ls="ls --color=auto"
 alias ll="ls --color -al"
@@ -111,4 +106,3 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
