@@ -94,6 +94,7 @@ eval $(thefuck --alias)
 # node version manager
 export NVM_DIR="/home/chengyi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # android
 export NDK_HOME=/home/chengyi/Android/Sdk/ndk-bundle/
@@ -143,3 +144,5 @@ function pet-select() {
 zle -N pet-select
 stty -ixon
 bindkey '^s' pet-select
+
+PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213

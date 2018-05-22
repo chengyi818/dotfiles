@@ -20,3 +20,5 @@ fi
 export GSETTINGS_SCHEMA_DIR=/usr/share/gconf/schemas:/usr/share/glib-2.0/schemas:/usr/share/mate:/usr/share/mate:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 export XDG_DATA_DIRS=/usr/share/cinnamon:/usr/share/mate:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 
+
+PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
