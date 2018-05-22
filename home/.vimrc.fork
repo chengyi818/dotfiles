@@ -94,7 +94,7 @@ if isdirectory(expand("~/.vim/bundle/syntastic"))
             Errors
         endif
     endfunction
-    "nnoremap <Leader>s :call ToggleErrors()<cr>
+    "nnoremap <Leader>sc :call ToggleErrors()<cr>
     nnoremap <Leader>s :lopen<cr>
     nnoremap <Leader>sn :lnext<cr>
     nnoremap <Leader>sp :lprevious<cr>
@@ -127,6 +127,8 @@ if count(g:spf13_bundle_groups, 'youcompleteme')
     let g:ycm_complete_in_strings = 1
     "注释和字符串中的文字也会被收入补全
     let g:ycm_collect_identifiers_from_comments_and_strings = 0
+    " 关闭语法检查功能
+    let g:ycm_show_diagnostics_ui = 0
 endif
 " YouCompleteMe end}
 
