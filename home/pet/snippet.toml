@@ -52,3 +52,8 @@
   description = "image烧录"
   command = "adb reboot bootloader;sleep 5;fastboot flash boot boot.img;sleep 3;fastboot flash system system.img;sleep 3;fastboot flash userdata userdata.img;fastboot reboot"
   output = ""
+
+[[snippets]]
+  description = "Android lunch"
+  command = "echo 'current product: ' && ls -l ./out/target/product |awk '/^d/ {print $NF}' && echo -e '-------------------------------------' && . ./build/envsetup.sh && lunch"
+  output = ""
