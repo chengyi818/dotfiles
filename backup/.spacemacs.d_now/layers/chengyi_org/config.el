@@ -16,6 +16,7 @@
 (setq org-M-RET-may-split-line nil)
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
+(setq org-bullets-bullet-list '("🐉" "🐠" "🐬" "🐤"))
 
 ;; the %i would copy the selected text into the template
 ;; http://www.howardism.org/Technical/Emacs/journaling-org.html
