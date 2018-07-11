@@ -55,5 +55,5 @@
 
 [[snippets]]
   description = "Android lunch"
-  command = rm -rf apps/ cases && "echo 'current product: ' && ls -l ./out/target/product |awk '/^d/ {print $NF}' && echo -e '-------------------------------------' && . ./build/envsetup.sh && lunch"
+  command = "rm -rf apps/ cases && echo 'current product: ' && ls -l ./out/target/product |awk '/^d/ {print $NF}' && echo -e '-------------------------------------' && . ./build/envsetup.sh && lunch"
   output = ""
