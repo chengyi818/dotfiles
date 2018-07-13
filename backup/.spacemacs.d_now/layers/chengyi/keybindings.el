@@ -14,6 +14,9 @@
 (define-key evil-visual-state-map "j" 'evil-next-visual-line)
 (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
 
+;; Support C-o and C-i
+(define-key evil-motion-state-map (kbd "C-i") 'evil-jump-forward)
+
 ;; remove ^M in emacs
 (spacemacs/set-leader-keys "om" 'delete-carrage-returns)
 (defun delete-carrage-returns ()

@@ -378,28 +378,14 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;; always enable indent-guide
-  (spacemacs/toggle-indent-guide-globally-on)
-  ;; Indent configuration
-  ;; For c-mode
-  (setq c-default-style "k&r")
-  (setq c-basic-offset 4)
-  ;; For global
-  (setq-default tab-width 4)
-  (setq-default evil-shift-width 4)
-  ;; For python-mode
-  (setq python-guess-indent nil
-        python-indent-offset 4
-        python-indent 4)
+;; Indent configuration
+;; always enable indent-guide
+(spacemacs/toggle-indent-guide-globally-on)
 
-  ;; show time
-  (display-time-mode t)
+;;evil-surround
+(setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
+                                              evil-surround-pairs-alist))
 
-  ;;evil-surround
-  (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
-                                                evil-surround-pairs-alist))
-  ;;ignore python3 RELP error
-  (setq python-shell-completion-native-enable nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
