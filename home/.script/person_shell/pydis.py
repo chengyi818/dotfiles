@@ -3,14 +3,16 @@
 # Mail: chengyi818@foxmail.cn
 # created time: Fri 15 Jun 2018 05:10:24 PM CST
 
-import argparse
 import dis
+import sys
+
 
 def is_code_object(code_object):
     if type(code_object).__name__ == 'code':
         return True
 
     return False
+
 
 def show_code_object(code_object):
     if not is_code_object(code_object):
@@ -25,17 +27,13 @@ def show_code_object(code_object):
     print("---------------------------")
 
 
+def main():
+    file_name = sys.argv[len(sys.argv)-1]
+    s = open(file_name).read()
+    co = compile(s, file_name, 'exec')
 
-parser = argparse.ArgumentParser(description='Python Source Code Dis Tool')
-parser.add_argument('-f', '--file',
-                    type=str,
-                    help='Specify file to dis',
-                    dest='file')
+    show_code_object(co)
 
-args = parser.parse_known_args()
 
-file_name = args[0].file
-s = open(file_name).read()
-co = compile(s, file_name, 'exec')
-
-show_code_object(co)
+if __name__ == "__main__":
+    main()

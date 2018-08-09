@@ -70,10 +70,13 @@ alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
 alias rebuild="~/.script/rebuild"
 alias csclean="~/.script/csclean"
 alias YCM="~/.script/YouCompleteMe.sh"
-alias py2="python2"
-alias py3="python3"
 alias psg="ps aux | grep"
 alias dstat="dstat -cdlmnpsy"
+alias py2="python2"
+alias py3="python3"
+alias pydis3="python3 ~/.script/person_shell/pydis.py"
+alias pydis2="python2 ~/.script/person_shell/pydis.py"
+alias pydis2.5="python2.5 ~/.script/person_shell/pydis.py"
 
 # autojump setting
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
