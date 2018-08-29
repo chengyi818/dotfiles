@@ -10,5 +10,4 @@ fi
 
 # Key bindings
 # ------------
-source "/home/chengyi/.fzf/shell/key-bindings.zsh"
 
