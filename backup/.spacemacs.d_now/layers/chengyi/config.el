@@ -15,12 +15,6 @@
       python-indent-offset 4
       python-indent 4)
 
-;; show time
-(display-time-mode t)
-
-;;ignore python3 RELP error
-(setq python-shell-completion-native-enable nil)
-
 ;; magit
 (defun magit-push-to-gerrit-master ()
   (interactive)

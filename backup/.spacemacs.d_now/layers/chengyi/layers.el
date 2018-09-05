@@ -2,4 +2,5 @@
                                       chengyi_make_header
                                       chengyi_org
                                       chengyi_robot
+                                      chengyi_ui
                                       ))
