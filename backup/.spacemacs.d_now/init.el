@@ -79,8 +79,8 @@ values."
             c-c++-enable-clang-support t)
      markdown
      (shell :variables
-            ;; shell-default-width 30
             shell-default-shell 'term
+            shell-default-term-shell "/bin/zsh"
             shell-default-full-span nil
             shell-default-position 'right)
      emacs-lisp
@@ -384,7 +384,6 @@ you should place your code here."
 ;; always enable indent-guide
 (spacemacs/toggle-indent-guide-globally-on)
 
-(add-hook 'term-mode-hook 'balance-windows)
 
 ;;evil-surround
 (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))

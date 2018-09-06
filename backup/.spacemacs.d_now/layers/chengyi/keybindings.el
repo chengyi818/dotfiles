@@ -30,3 +30,11 @@
 ;; Control+wheel increase/decrease font size
 (global-set-key (kbd "<C-mouse-4>") 'spacemacs/scale-up-font)
 (global-set-key (kbd "<C-mouse-5>") 'spacemacs/scale-down-font)
+
+;; shell pop width
+(defun cy-pop-shell ()
+  (interactive)
+  (spacemacs/default-pop-shell)
+  (balance-windows)
+  )
+(spacemacs/set-leader-keys "'" 'cy-pop-shell)
