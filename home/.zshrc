@@ -150,17 +150,11 @@ bindkey '^s' pet-select
 
 PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
 
-# iphone 
-[ ! -d "$HOME/usr/src"  ] && mkdir -p "$HOME/usr/src"
-export PKG_CONFIG_PATH="${HOME}/usr/lib/pkgconfig:${PKG_CONFIG_PATH}"
-export CPATH="${HOME}/usr/include:${CPATH}"
-
-export MANPATH="${HOME}/usr/share/man:${MANPATH}"
-
-export PATH="${HOME}/usr/bin:${PATH}"
-export LD_LIBRARY_PATH="${HOME}/usr/lib:${LD_LIBRARY_PATH}"
-
-
-
-
-
+# iphone
+# conflict with xv6 compile
+# [ ! -d "$HOME/usr/src"  ] && mkdir -p "$HOME/usr/src"
+# export PKG_CONFIG_PATH="${HOME}/usr/lib/pkgconfig:${PKG_CONFIG_PATH}"
+# export CPATH="${CPATH}:${HOME}/usr/include"
+# export MANPATH="${MANPATH}:${HOME}/usr/share/man"
+# export PATH="${PATH}:${HOME}/usr/bin"
+# export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/usr/lib"
