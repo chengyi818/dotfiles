@@ -31,8 +31,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     html
-     rust
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -72,6 +70,9 @@ values."
      github
      version-control
      ; lang
+     html
+     rust
+     asm
      javascript
      yaml
      (c-c++ :variables
@@ -384,6 +385,12 @@ you should place your code here."
 ;; always enable indent-guide
 (spacemacs/toggle-indent-guide-globally-on)
 
+;; fix neotree
+;; cannot make side window the only window
+;; SPC-fed 打开配置
+;; SPC-feR 重新加载
+(setq helm-split-window-inside-p t)
+'(helm-autoresize-mode 1)
 
 ;;evil-surround
 (setq-default evil-surround-pairs-alist (cons '(?> . ("<<" . ">>"))
