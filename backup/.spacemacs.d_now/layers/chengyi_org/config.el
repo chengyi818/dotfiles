@@ -10,7 +10,7 @@
 (setq org-todo-keywords
       (quote (
               (sequence "TODO(t)" "|" "DONE(d)")
-              (sequence "SCHEDULED(s)" "|" "SOMEDAY(S)")
+              (sequence "SCHEDULED(s)" "|" "WAITING(w)")
               (sequence "|" "CANCELED(c)")
               )))
 (setq org-M-RET-may-split-line nil)
