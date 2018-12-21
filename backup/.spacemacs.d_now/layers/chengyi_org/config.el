@@ -28,7 +28,7 @@
          "* %?\n  %i\n"
          :empty-lines 1)
         ("s" "Success" entry (file "~/Nutstore/org/store/Success.org")
-         "* %t\n\t1. %?\n %i\n"
+         "* %t\n\t1. %? %i"
          :empty-lines 1)
         ))
 
