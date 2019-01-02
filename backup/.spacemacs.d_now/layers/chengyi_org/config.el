@@ -5,6 +5,7 @@
                              "~/Nutstore/org/crontab/Review_Daily.org"
                              "~/Nutstore/org/crontab/Review_Weekly.org"
                              "~/Nutstore/org/crontab/Review_Monthly.org"
+                             "~/Nutstore/org/crontab/Review_Yearly.org"
                              ))
 (setq org-default-notes-file "~/Nutstore/org/GTD.org")
 (setq org-todo-keywords
@@ -33,15 +34,8 @@
         ))
 
 (setq org-tag-alist '(
-                      ("Blog" . ?b)
-                      ("Dream" . ?d)
-                      ("@Family" . ?f)
-                      ("Kata" . ?k)
-                      ("Project" . ?p)
-                      ("Read" . ?r)
-                      ("Shopping" . ?s)
-                      ("Tech" . ?t)
-                      ("Target" . ?T)
-                      ("@Work" . ?w)
-                      ("Wiznote" . ?W)
+                      ("1重要且紧急" . ?1)
+                      ("2重要不紧急" . ?2)
+                      ("3紧急不重要" . ?3)
+                      ("4不重要不紧急" . ?4)
                       ))
