@@ -28,7 +28,7 @@
         ("i" "Inbox" entry (file+headline "~/Nutstore/org/GTD.org" "Inbox")
          "* %?\n  %i\n"
          :empty-lines 1)
-        ("s" "Success" entry (file "~/Nutstore/org/store/Success.org")
+        ("s" "Success 5+" entry (file "~/Nutstore/org/store/Success.org")
          "* %t\n\t1. %? %i"
          :empty-lines 1)
         ))
