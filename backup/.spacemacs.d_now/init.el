@@ -78,7 +78,9 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
-     markdown
+     ;; npm install -g vmd
+     (markdown :variables
+               markdown-live-preview-engine 'vmd)
      (shell :variables
             shell-default-shell 'term
             shell-default-term-shell "/bin/zsh"

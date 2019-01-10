@@ -1,7 +1,10 @@
 "*":
   core:
+    disabledPackages: [
+      "vim-mode-plus"
+    ]
     telemetryConsent: "limited"
   editor:
-    fontSize: 15
+    fontSize: 17
   "exception-reporting":
     userId: "5a4ecc7a-21c3-4c0c-90c3-7fa4187710b2"
