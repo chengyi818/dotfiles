@@ -1,9 +1,11 @@
 #!/bin/bash
 
 directory_list=(
-'/home/chengyi/code/linux_kernel_all'
-'/home/chengyi/code/kata'
+'/home/chengyi/code/github/linux_kernel_all'
+'/home/chengyi/code/github/kata'
 '/home/chengyi/.homesick/repos/dotfiles'
+'/home/chengyi/code/github/Fat-Cheng-s-xv6-journey'
+'/home/chengyi/code/github/my_xv6'
 )
 
 #check the working_directory clean or not?
