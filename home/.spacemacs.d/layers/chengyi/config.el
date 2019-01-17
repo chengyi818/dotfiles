@@ -14,3 +14,12 @@
 (setq python-guess-indent nil
       python-indent-offset 4
       python-indent 4)
+
+
+;; fix neotree
+;; cannot make side window the only window
+;; SPC-fed 打开配置
+;; SPC-feR 重新加载
+(setq helm-split-window-inside-p t)
+'(helm-autoresize-mode 1)
+
