@@ -50,7 +50,7 @@
 
 [[snippets]]
   description = "image烧录"
-  command = "adb reboot bootloader;sleep 5;fastboot flash boot boot.img;sleep 3;fastboot flash system system.img;sleep 3;fastboot flash userdata userdata.img;fastboot reboot"
+  command = "adb reboot bootloader;sleep 5;fastboot erase boot;fastboot flash boot boot.img;sleep 3;fastboot erase system;fastboot flash system system.img;sleep 3;fastboot erase userdata;fastboot flash userdata userdata.img;fastboot reboot"
   output = ""
 
 [[snippets]]
