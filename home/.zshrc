@@ -37,7 +37,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump extract colored-man-pages sudo copydir history copyfile command-not-found tmux emoji adb git-extras)
+plugins=(git autojump extract colored-man-pages sudo copydir history copyfile command-not-found tmux emoji adb git-extras zsh-autosuggestions)
 # User configuration
 export PATH=~/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:/home/chengyi/Android/Sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android-studio/bin:~/Android/Sdk/tools:$PATH
 source $ZSH/oh-my-zsh.sh
