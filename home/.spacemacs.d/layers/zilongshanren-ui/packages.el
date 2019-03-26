@@ -234,8 +234,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
 
         ;; right side
         '(
-          (version-control :when active
-                           :priority 78)
+          (version-control :when active)
           (python-pyvenv :fallback python-pyenv)
           (purpose :priority 94)
           (battery :when active)
