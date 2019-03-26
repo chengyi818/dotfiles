@@ -22,4 +22,3 @@
 ;; SPC-feR 重新加载
 (setq helm-split-window-inside-p t)
 '(helm-autoresize-mode 1)
-

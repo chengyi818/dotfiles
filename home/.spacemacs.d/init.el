@@ -119,6 +119,7 @@ values."
    dotspacemacs-excluded-packages '(
                                     org-projectile
                                     evil-unimpaired
+                                    ;; spaceline
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
