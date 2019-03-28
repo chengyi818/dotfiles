@@ -227,8 +227,8 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
            :priority 89)
           ;; (minor-modes :when active
           ;;              :priority 9)
-          (mu4e-alert-segment :when active)
-          (erc-track :when active)
+          ;; (mu4e-alert-segment :when active)
+          ;; (erc-track :when active)
           (nyan-cat :when active)
           )
 
@@ -238,9 +238,9 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
           (python-pyvenv :fallback python-pyenv)
           (purpose :priority 94)
           (battery :when active)
-          (selection-info :priority 95)
           input-method
           ((buffer-encoding-abbrev
+            selection-info
             point-position
             line-column)
            :separator " | "
