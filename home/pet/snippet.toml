@@ -55,7 +55,7 @@
 
 [[snippets]]
   description = "image烧录2"
-  command = "adb reboot bootloader;sleep 5;fastboot flashall;sleep 3;fastboot reboot"
+  command = "export ANDROID_PRODUCT_OUT=.;adb reboot bootloader;sleep 5;fastboot flashall;sleep 3;fastboot reboot"
   output = ""
 
 [[snippets]]
