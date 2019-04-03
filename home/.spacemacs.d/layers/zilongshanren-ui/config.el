@@ -14,6 +14,7 @@
 
 ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
 (which-function-mode)
+(setq which-func-unknown "n/a")
 ;; (setq-default header-line-format
 ;;               '((which-func-mode ("" which-func-format " "))))
 

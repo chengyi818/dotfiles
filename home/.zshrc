@@ -120,9 +120,6 @@ mcd() { mkdir -p "$1"; cd "$1";}
 cls() { cd "$1"; ls;}
 backup() { cp "$1"{,.bak};}
 md5check() { md5sum "$1" | grep "$2";}
-function emulator {
-    (cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@" &;)
-}
 sbs(){ du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';}
 
 # 重复运行shell命令
@@ -148,7 +145,8 @@ zle -N pet-select
 stty -ixon
 bindkey '^s' pet-select
 
-PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
+# ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
+PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH;
 
 # iphone
 # conflict with xv6 compile
@@ -162,3 +160,8 @@ PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY IN
 # zsh console proxy
 #export http_proxy="socks5://127.0.0.1:1080"
 #export https_proxy="socks5://127.0.0.1:1080"
+
+# GO
+GOPATH=~/code/github/kata/Language/go/
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$(go env GOPATH)
