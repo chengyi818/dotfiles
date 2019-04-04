@@ -160,8 +160,3 @@ PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH;
 # zsh console proxy
 #export http_proxy="socks5://127.0.0.1:1080"
 #export https_proxy="socks5://127.0.0.1:1080"
-
-# GO
-GOPATH=~/code/github/kata/Language/go/
-export PATH=$PATH:$(go env GOPATH)/bin
-export GOPATH=$(go env GOPATH)

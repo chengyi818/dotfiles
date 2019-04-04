@@ -24,6 +24,7 @@ export XDG_DATA_DIRS=/usr/share/cinnamon:/usr/share/mate:/usr/local/share/:/usr/
 PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
 
 # golang setting
-GOPATH=/home/chengyi/go
+#GOPATH=/home/chengyi/go
+GOPATH=/home/chengyi/code/github/kata/Language/go/
 export GOPATH
 export PATH=$PATH:$GOPATH:$GOPATH/bin
