@@ -1,7 +1,6 @@
 ;; org-mode
 (setq org-agenda-files (list "~/Nutstore/org/GTD.org"
                              "~/Nutstore/org/crontab/crontab.org"
-                             "~/Nutstore/org/crontab/blog.org"
                              "~/Nutstore/org/crontab/Review_Daily.org"
                              "~/Nutstore/org/crontab/Review_Weekly.org"
                              "~/Nutstore/org/crontab/Review_Monthly.org"
