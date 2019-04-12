@@ -119,5 +119,5 @@ bind -x '"\C-s": pet_select'
 PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH;
 
 # bash console proxy
-#export http_proxy="socks5://127.0.0.1:1080"
-#export https_proxy="socks5://127.0.0.1:1080"
+export http_proxy="socks5://127.0.0.1:1080"
+export https_proxy="socks5://127.0.0.1:1080"
