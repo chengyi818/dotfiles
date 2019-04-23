@@ -157,7 +157,3 @@ PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH;
 # export MANPATH="${MANPATH}:${HOME}/usr/share/man"
 # export PATH="${PATH}:${HOME}/usr/bin"
 # export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/usr/lib"
-
-# zsh console proxy
-#export http_proxy="socks5://127.0.0.1:1080"
-#export https_proxy="socks5://127.0.0.1:1080"

@@ -118,6 +118,3 @@ bind -x '"\C-s": pet_select'
 # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
 PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH;
 
-# bash console proxy
-#export http_proxy="socks5://127.0.0.1:1080"
-#export https_proxy="socks5://127.0.0.1:1080"
