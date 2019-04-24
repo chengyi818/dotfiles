@@ -24,4 +24,5 @@ export XDG_DATA_DIRS=/usr/share/cinnamon:/usr/share/mate:/usr/local/share/:/usr/
 PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
 
 if [ -f "$HOME/.goenv.sh" ]; then
-   . "$HOME/.goenv.sh"
+    . "$HOME/.goenv.sh"
+fi

@@ -67,7 +67,7 @@ alias grep='grep --color=auto'
 alias c="clear"
 
 alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
-alias pc="proxychains4"
+alias pc="source ~/.script/proxyrc"
 alias rebuild="~/.script/rebuild"
 alias csclean="~/.script/csclean"
 alias YCM="~/.script/YouCompleteMe.sh"
