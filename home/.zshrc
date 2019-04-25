@@ -78,6 +78,8 @@ alias py3="python3"
 alias pydis3="python3 ~/.script/person_shell/pydis.py"
 alias pydis2="python2 ~/.script/person_shell/pydis.py"
 alias pydis2.5="python2.5 ~/.script/person_shell/pydis.py"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # autojump setting
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
