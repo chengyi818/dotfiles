@@ -3,6 +3,7 @@
 (setq make-header-author-name "pig")
 (setq make-header-author-email "dog")
 (setq make-header-shell-mode '#o755)
+
 (defun make-cc-header ()
   (interactive )
   (insert "/*\n")
@@ -13,6 +14,17 @@
   (insert " */\n")
   (insert "\n")
   (insert "#include \""(file-name-base (buffer-file-name))".h""\"\n\n"))
+
+(defun make-js-header ()
+  (interactive )
+  (insert "/*\n")
+  (insert " * File Name: "(file-name-base (buffer-file-name))"."(file-name-extension (buffer-file-name))"\n")
+  (insert " * Author: " make-header-author-name "\n")
+  (insert " * Mail: " make-header-author-email "\n")
+  (insert " * Created Time: " (format-time-string "%a %d %b %Y %r %Z")"\n")
+  (insert " */\n")
+  (insert "\n"))
+
 (defun make-h-header ()
   (interactive )
   (message "%s" make-header-author-name)
@@ -31,6 +43,7 @@
   (insert "#endif /* __" (replace-regexp-in-string "-" "_" (upcase (file-name-base (buffer-file-name))))"_H__ */")
   (evil-goto-line 11)
   )
+
 (defun make-java-header ()
   (interactive )
   (insert "/*\n")
@@ -40,6 +53,7 @@
   (insert " * Created Time: " (format-time-string "%a %d %b %Y %r %Z")"\n")
   (insert " */\n")
   (insert "\n"))
+
 (defun make-sh-header ()
   (set-file-modes (buffer-file-name) make-header-shell-mode)
   (interactive )
@@ -48,6 +62,7 @@
   (insert "# created time: " (format-time-string "%a %d %b %Y %r %Z")"\n")
   (insert "\n")
   )
+
 (defun make-py-header ()
   (interactive )
   (insert "#!/usr/bin/env python3\n")
@@ -57,6 +72,7 @@
   (insert "# created time: " (format-time-string "%a %d %b %Y %r %Z")"\n")
   ;; (insert "\"\"\"")
   (insert "\n"))
+
 (defun make-go-header ()
   (interactive )
   (insert "/*\n")
@@ -66,12 +82,14 @@
   (insert " * Created Time: " (format-time-string "%a %d %b %Y %r %Z")"\n")
   (insert " */\n")
   (insert "\n"))
+
 (defun make-makefile-header ()
   (interactive)
   (insert "# Author: " make-header-author-name "\n")
   (insert "# created time: " (format-time-string "%a %d %b %Y %r %Z")"\n")
   (insert "\n")
   )
+
 (defun make-header ()
   (interactive)
   "make header by file type."
@@ -91,7 +109,10 @@
        (make-makefile-header))
   (and (string= "java-mode" major-mode)
        (make-java-header))
+  (and (string= "js2-mode" major-mode)
+       (make-js-header))
   )
+
 (defun auto-make-header ()
   (interactive)
   "Call `make-header' if current buffer is empty and is a file buffer."
