@@ -81,7 +81,8 @@ values."
      html
      rust
      asm
-     javascript
+     (javascript :variables
+                 javascript-disable-tern-port-files nil)
      yaml
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
