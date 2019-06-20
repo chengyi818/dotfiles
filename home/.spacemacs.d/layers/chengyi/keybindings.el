@@ -50,12 +50,9 @@
 
 (with-eval-after-load 'magit
   (progn
-    (magit-define-popup-action 'magit-push-popup
-      ?g
-      "Push to gerrit master"
-      'magit-push-to-gerrit-master)
-    (magit-define-popup-action 'magit-push-popup
-      ?d
-      "Push to gerrit develop"
-      'magit-push-to-gerrit-develop)
-    ))
+    (transient-append-suffix 'magit-push "m"
+      '("g" "Push to gerrit master" magit-push-to-gerrit-master))
+    (transient-append-suffix 'magit-push "m"
+      '("d" "Push to gerrit develop" magit-push-to-gerrit-develop))
+    )
+  )
