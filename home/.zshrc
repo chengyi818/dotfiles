@@ -80,7 +80,8 @@ alias pydis2="python2 ~/.script/person_shell/pydis.py"
 alias pydis2.5="python2.5 ~/.script/person_shell/pydis.py"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-alias ap='ap() { adb push $1 /data/local/tmp;}; ap'
+alias apl='ap() { adb push $1 /data/local/tmp;}; ap'
+alias aps='ap() { adb push $1 /sdcard/脚本;}; ap'
 
 # autojump setting
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
