@@ -18,6 +18,10 @@
 ;; For go-mode
 (setq go-format-before-save t)
 
+;; For js-mode
+(setq-default js2-basic-offset 2)
+(setq-default js-indent-level 2)
+
 ;; fix neotree
 ;; cannot make side window the only window
 ;; SPC-fed 打开配置
