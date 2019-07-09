@@ -106,7 +106,7 @@ export NVM_DIR="/home/chengyi/.nvm"
 
 # android
 export NDK_HOME=/home/chengyi/Android/Sdk/ndk-bundle/
-export PATH=/home/chengyi/Android/android-ndk-r11c-linux-x86_64/android-ndk-r11c:$PATH
+export PATH=/home/chengyi/Android/Sdk/ndk-bundle:$PATH
 alias repo="~/bin/repo"
 
 # support snap
