@@ -384,11 +384,29 @@ values."
   before packages are loaded. If you are unsure, you should try in setting them in
   `dotspacemacs/user-config' first."
 
-  (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-          ("org-cn"   . "http://elpa.emacs-china.org/org/")
-          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+  ;; ;; netease
+  ;; (setq configuration-layer-elpa-archives
+  ;;       '(("melpa-cn" . "http://mirrors.163.com/elpa/melpa/")
+  ;;         ("org-cn"   . "http://mirrors.163.com/elpa/org/")
+  ;;         ("gnu-cn"   . "http://mirrors.163.com/elpa/gnu/")))
 
+  ;; ;; tecent
+  ;; (setq configuration-layer-elpa-archives
+  ;;       '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+  ;;         ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+  ;;         ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
+
+  ;; qinghua
+  (setq configuration-layer-elpa-archives
+        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+
+  ;; ;; Emacs China
+  ;; (setq configuration-layer-elpa-archives
+  ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+  ;;         ("org-cn"   . "http://elpa.emacs-china.org/org/")
+  ;;         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   )
 
 (defun dotspacemacs/user-config ()
