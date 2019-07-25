@@ -31,6 +31,21 @@
 (global-set-key (kbd "<C-mouse-4>") 'spacemacs/scale-up-font)
 (global-set-key (kbd "<C-mouse-5>") 'spacemacs/scale-down-font)
 
+(add-hook 'image-mode-hook
+          (lambda ()
+            (imagex-auto-adjust-mode 1)
+            ))
+
+(defun my-image-in()
+  (interactive)
+  (imagex-sticky-zoom-in 1))
+(define-key image-mode-map (kbd "<C-mouse-4>") 'my-image-in)
+
+(defun my-image-out()
+  (interactive)
+  (imagex-sticky-zoom-out 1))
+(define-key image-mode-map (kbd "<C-mouse-5>") 'my-image-out)
+
 ;; shell pop width
 (defun cy-pop-shell ()
   (interactive)
