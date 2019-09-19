@@ -26,3 +26,4 @@ PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH; # ADDED BY IN
 if [ -f "$HOME/.goenv.sh" ]; then
     . "$HOME/.goenv.sh"
 fi
+

@@ -1,12 +1,28 @@
 ;; org-mode
-(setq org-agenda-files (list "~/Nutstore/org/GTD.org"
-                             "~/Nutstore/org/crontab/crontab.org"
-                             "~/Nutstore/org/crontab/Review_Daily.org"
-                             "~/Nutstore/org/crontab/Review_Weekly.org"
-                             "~/Nutstore/org/crontab/Review_Monthly.org"
-                             "~/Nutstore/org/crontab/Review_Yearly.org"
+(setq org-base-path "~/OneDrive/OneSyncFiles/org/")
+(setq org-gtd-file-path (concatenate 'string org-base-path "GTD.org"))
+(setq org-store-success-file-path (concatenate 'string org-base-path "store/Success.org"))
+(setq org-crontab-file-path (concatenate 'string org-base-path "crontab/crontab.org"))
+(setq org-review-file-path (concatenate 'string org-base-path "crontab/Review.org"))
+
+(setq org-default-notes-file org-gtd-file-path)
+(setq org-agenda-files (list org-gtd-file-path
+                             org-crontab-file-path
+                             org-review-file-path
                              ))
-(setq org-default-notes-file "~/Nutstore/org/GTD.org")
+
+;; http://www.howardism.org/Technical/Emacs/journaling-org.html
+;; add multi-file journal
+(setq org-capture-templates
+      '(
+        ("i" "Inbox" entry (file+headline org-gtd-file-path "Inbox")
+         "* %?\n  %i\n"
+         :empty-lines 1)
+        ("s" "Success 5+" entry (file org-store-success-file-path)
+         "* %t\n\t1. %? %i"
+         :empty-lines 1)
+        ))
+
 (setq org-todo-keywords
       (quote (
               (sequence "TODO(t)" "|" "DONE(d)")
@@ -18,18 +34,6 @@
       browse-url-generic-program "google-chrome")
 (setq org-bullets-bullet-list '("🐉" "🐠" "🐬" "🐤"))
 ;; (setq org-bullets-bullet-list '("🐭" "🐮" "🐯" "🐰" "🐲" "🐍" "🐴" "🐑" "🙉" "🐔" "🐶" "🐷"))
-
-;; http://www.howardism.org/Technical/Emacs/journaling-org.html
-;; add multi-file journal
-(setq org-capture-templates
-      '(
-        ("i" "Inbox" entry (file+headline "~/Nutstore/org/GTD.org" "Inbox")
-         "* %?\n  %i\n"
-         :empty-lines 1)
-        ("s" "Success 5+" entry (file "~/Nutstore/org/store/Success.org")
-         "* %t\n\t1. %? %i"
-         :empty-lines 1)
-        ))
 
 (setq org-tag-alist '(
                       ("1重要且紧急" . ?1)
