@@ -1,5 +1,7 @@
+Bundle 'Chiel92/vim-autoformat'
 Bundle 'vim-scripts/fcitx.vim'
 Bundle 'vim-scripts/SingleCompile'
 Bundle 'a.vim'
 Bundle 'dantezhu/authorinfo'
 Bundle 'mhinz/vim-startify'
+Bundle 'rust-lang/rust.vim'

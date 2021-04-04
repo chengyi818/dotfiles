@@ -79,7 +79,8 @@ values."
          go-backend 'lsp
          go-tab-width 4)
      html
-     rust
+     (rust :variables
+           rust-format-on-save t)
      asm
      (javascript :variables
                  javascript-disable-tern-port-files nil)

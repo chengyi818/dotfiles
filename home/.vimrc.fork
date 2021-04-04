@@ -213,6 +213,22 @@ if isdirectory(expand("~/.vim/bundle/ack.vim/"))
     nnoremap <Leader>a :Ack!<Space>
 endif
 "}
+"
+" rust.vim {
+if isdirectory(expand("~/.vim/bundle/rust.vim/"))
+    let g:rustfmt_autosave = 1
+endif
+"}
+"
+"
+" autoformat {
+if isdirectory(expand("~/.vim/bundle/vim-autoformat/"))
+    let g:formatterpath = ['/usr/bin/astyle']
+    au BufWrite * :Autoformat
+    let g:formatdef_my_custom_cpp = '"astyle --style=google"'
+    let g:formatters_cpp = ['my_custom_cpp']
+endif
+"}
 
 " vim-startify {
 set viminfo='100,n$HOME/.vim/viminfo

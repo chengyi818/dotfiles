@@ -27,3 +27,6 @@ if [ -f "$HOME/.goenv.sh" ]; then
     . "$HOME/.goenv.sh"
 fi
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"

@@ -39,7 +39,9 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git autojump extract colored-man-pages sudo copydir history copyfile command-not-found tmux emoji adb git-extras zsh-autosuggestions)
 # User configuration
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.local/bin:/opt/android-studio/bin:~/Android/Sdk/tools:$PATH
+export PATH=/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.local/bin:/opt/android-studio/bin:~/Android/Sdk/tools:$PATH
+export PATH=/usr/local/bin:/snap/bin/:$PATH
+
 source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -67,6 +69,7 @@ alias grep='grep --color=auto'
 alias c="clear"
 
 alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
+alias start_onedrive="setsid onedrive --monitor --verbose --confdir='~/.onedrive' >/dev/null 2>&1 &"
 alias pc="source ~/.script/proxyrc"
 alias rebuild="~/.script/rebuild"
 alias csclean="~/.script/csclean"
@@ -152,15 +155,16 @@ bindkey '^s' pet-select
 
 # chromium
 PATH=$PATH:/home/chengyi/code/github/public/depot_tools;export PATH;
+PATH=$PATH:$HOME/.cargo/bin;export PATH;
 
 # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 844202D4-D736-5E2B-A343-3DBA463EF213
 PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH;
 
 # iphone
 # conflict with xv6 compile
-# [ ! -d "$HOME/usr/src"  ] && mkdir -p "$HOME/usr/src"
-# export PKG_CONFIG_PATH="${HOME}/usr/lib/pkgconfig:${PKG_CONFIG_PATH}"
-# export CPATH="${CPATH}:${HOME}/usr/include"
-# export MANPATH="${MANPATH}:${HOME}/usr/share/man"
-# export PATH="${PATH}:${HOME}/usr/bin"
-# export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/usr/lib"
+ #[ ! -d "$HOME/usr/src"  ] && mkdir -p "$HOME/usr/src"
+ #export PKG_CONFIG_PATH="${HOME}/usr/lib/pkgconfig:${PKG_CONFIG_PATH}"
+ #export CPATH="${CPATH}:${HOME}/usr/include"
+ #export MANPATH="${MANPATH}:${HOME}/usr/share/man"
+ #export PATH="${PATH}:${HOME}/usr/bin"
+ #export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/usr/lib"
