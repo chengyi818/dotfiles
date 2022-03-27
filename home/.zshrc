@@ -47,9 +47,9 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+    export EDITOR='vim'
 else
-  export EDITOR='vim'
+    export EDITOR='vim'
 fi
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -141,13 +141,13 @@ function run() {
 
 # pet https://github.com/knqyf263/pet
 function prev() {
-  PREV=$(fc -lrn | head -n 1)
-  sh -c "pet new `printf %q "$PREV"`"
+    PREV=$(fc -lrn | head -n 1)
+    sh -c "pet new `printf %q "$PREV"`"
 }
 function pet-select() {
-  BUFFER=$(pet search --query "$LBUFFER")
-  CURSOR=$#BUFFER
-  zle redisplay
+BUFFER=$(pet search --query "$LBUFFER")
+CURSOR=$#BUFFER
+zle redisplay
 }
 zle -N pet-select
 stty -ixon
@@ -162,9 +162,16 @@ PATH=$PATH:/home/chengyi/Documents/software/010Editor;export PATH;
 
 # iphone
 # conflict with xv6 compile
- #[ ! -d "$HOME/usr/src"  ] && mkdir -p "$HOME/usr/src"
- #export PKG_CONFIG_PATH="${HOME}/usr/lib/pkgconfig:${PKG_CONFIG_PATH}"
- #export CPATH="${CPATH}:${HOME}/usr/include"
- #export MANPATH="${MANPATH}:${HOME}/usr/share/man"
- #export PATH="${PATH}:${HOME}/usr/bin"
- #export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/usr/lib"
+[ ! -d "$HOME/usr/src"  ] && mkdir -p "$HOME/usr/src"
+export PKG_CONFIG_PATH="${HOME}/usr/lib/pkgconfig:${PKG_CONFIG_PATH}"
+export CPATH="${CPATH}:${HOME}/usr/include"
+export MANPATH="${MANPATH}:${HOME}/usr/share/man"
+export PATH="${PATH}:${HOME}/usr/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/usr/lib"
+source /home/chengyi/code/github/public/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export RUSTUP_DIST_SERVER=https://mirrors.sjtug.sjtu.edu.cn/rust-static/
+export RUSTUP_DIST_ROOT=https://mirrors.sjtug.sjtu.edu.cn/rust-static/rustup
+
+#export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+#export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
