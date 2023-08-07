@@ -10,7 +10,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
 fi
 # set PATH so it includes user's private bin if it exists
@@ -28,5 +28,5 @@ if [ -f "$HOME/.goenv.sh" ]; then
 fi
 
 
-export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
+. "$HOME/.cargo/env"

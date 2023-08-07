@@ -37,7 +37,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump extract colored-man-pages sudo copydir history copyfile command-not-found tmux emoji adb git-extras zsh-autosuggestions)
+plugins=(git autojump copypath extract colored-man-pages sudo history copyfile command-not-found tmux emoji zsh-autosuggestions)
 # User configuration
 export PATH=/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.local/bin:/opt/android-studio/bin:~/Android/Sdk/tools:$PATH
 export PATH=/usr/local/bin:/snap/bin/:$PATH
@@ -69,6 +69,7 @@ alias grep='grep --color=auto'
 alias c="clear"
 
 alias emacs="setsid env LC_CTYPE=zh_CN.UTF-8 emacs >/dev/null 2>&1 &"
+alias wiznote="setsid /home/chengyi/code/Tools/wiznote-desktop.AppImage >/dev/null 2>&1 &"
 alias start_onedrive="setsid onedrive --monitor --verbose --confdir='~/.onedrive' >/dev/null 2>&1 &"
 alias pc="source ~/.script/proxyrc"
 alias rebuild="~/.script/rebuild"
@@ -175,3 +176,4 @@ export RUSTUP_DIST_ROOT=https://mirrors.sjtug.sjtu.edu.cn/rust-static/rustup
 
 #export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 #export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+eval $(opam env)

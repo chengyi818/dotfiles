@@ -53,3 +53,6 @@
 	includeIssuesSection = false
 [http]
 	postBuffer = 524288000
+	sslVerify = false
+[oh-my-zsh]
+	hide-dirty = 1

@@ -1,5 +1,5 @@
 ;; org-mode
-(setq org-base-path "~/OneDrive/OneSyncFiles/org/")
+(setq org-base-path "~/Nutstore/OneSyncFiles/org/")
 (setq org-gtd-file-path (concatenate 'string org-base-path "GTD.org"))
 (setq org-store-success-file-path (concatenate 'string org-base-path "store/Success.org"))
 (setq org-crontab-file-path (concatenate 'string org-base-path "crontab/crontab.org"))
@@ -32,8 +32,9 @@
 (setq org-M-RET-may-split-line nil)
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
-(setq org-bullets-bullet-list '("🐉" "🐠" "🐬" "🐤"))
-;; (setq org-bullets-bullet-list '("🐭" "🐮" "🐯" "🐰" "🐲" "🐍" "🐴" "🐑" "🙉" "🐔" "🐶" "🐷"))
+;;(setq org-bullets-bullet-list '("⁖" "◉" "○" "✸" "✿"))
+(setq org-bullets-bullet-list '("◉" "⁑" "⁂" "❖" "✮" "✱" "✸"))
+
 
 (setq org-tag-alist '(
                       ("1重要且紧急" . ?1)
@@ -50,16 +51,16 @@
 ;; org-table 中英文对齐问题
 ;; https://github.com/tumashu/cnfonts
 (set-face-attribute
- 'default nil
- :font (font-spec :name "-ADBO-Source Code Pro-ultrabold-italic-normal-*-*-*-*-*-m-0-iso10646-1"
-                  :weight 'normal
-                  :slant 'normal
-                  :size 16))
+  'default nil
+  :font (font-spec :name "-ADBO-Source Code Pro-ultrabold-italic-normal-*-*-*-*-*-m-0-iso10646-1"
+                   :weight 'normal
+                   :slant 'normal
+                   :size 16))
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font
-   (frame-parameter nil 'font)
-   charset
-   (font-spec :name "-DAMA-Ubuntu Mono-normal-italic-normal-*-*-*-*-*-m-0-iso10646-1"
-              :weight 'normal
-              :slant 'normal
-              :size 17.5)))
+    (frame-parameter nil 'font)
+    charset
+    (font-spec :name "-DAMA-Ubuntu Mono-normal-italic-normal-*-*-*-*-*-m-0-iso10646-1"
+               :weight 'normal
+               :slant 'normal
+               :size 17.5)))
